@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Standar Proses Pendidikan 2026 — SD Muhammadiyah 01 Kukusan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:   #1a237e;
+      --royal:  #283593;
+      --mid:    #3949ab;
+      --soft:   #5c6bc0;
+      --gold:   #f5c842;
+      --accent: #e8b84b;
+      --light:  #e8eaf6;
+      --bg:     #f4f5fb;
+      --white:  #ffffff;
+      --text:   #1c1f3a;
+      --muted:  #5c6394;
+      --border: #dde0f0;
+
+      /* 5W1H colors */
+      --c-who:   #c62828;
+      --c-what:  #1565c0;
+      --c-where: #2e7d32;
+      --c-when:  #6a1b9a;
+      --c-why:   #e65100;
+      --c-how:   #00838f;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* ══ HEADER ══ */
+    header {
+      background: linear-gradient(135deg, #4a2600 0%, #7b4a00 45%, #b8860b 100%);
+      position: relative; overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 82% 22%, rgba(245,200,66,.2) 0%, transparent 52%),
+        radial-gradient(circle at 8% 78%, rgba(255,255,255,.05) 0%, transparent 42%);
+    }
+    header::after {
+      content: '';
+      position: absolute; right: -70px; bottom: -70px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      border: 45px solid rgba(245,200,66,.12);
+    }
+
+    .header-inner {
+      position: relative;
+      max-width: 1060px; margin: 0 auto;
+      padding: 34px 32px 30px;
+      display: flex; align-items: center; gap: 24px;
+    }
+
+    /* logo — white BG jpeg version */
+    .logo-wrap {
+      flex-shrink: 0; width: 82px; height: 82px;
+      background: #ffffff;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(245,200,66,.8);
+      box-shadow: 0 0 0 4px rgba(255,255,255,.15), 0 4px 20px rgba(0,0,0,.3);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-wrap img {
+      width: 86%; height: 86%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .hdr-text .hdr-school {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+    }
+    .hdr-text .hdr-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      color: var(--white); font-weight: 900; line-height: 1.2;
+    }
+    .hdr-text .hdr-sub { font-size: 12.5px; color: rgba(255,255,255,.65); margin-top: 5px; }
+
+    /* ══ NAV ══ */
+    .nav-strip { background: rgba(0,0,0,.22); border-top: 1px solid rgba(255,255,255,.1); }
+    .nav-inner { max-width: 1060px; margin: 0 auto; padding: 0 32px; display: flex; }
+    .nav-inner a {
+      padding: 13px 18px; font-size: 12.5px; font-weight: 600;
+      color: rgba(255,255,255,.7); text-decoration: none; letter-spacing: .4px;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .nav-inner a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .nav-inner a.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ══ BREADCRUMB ══ */
+    .breadcrumb {
+      max-width: 1060px; margin: 0 auto;
+      padding: 18px 32px 0;
+      font-size: 12.5px; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--mid); text-decoration: none; font-weight: 500; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* ══ DOC HERO ══ */
+    .doc-hero {
+      max-width: 1060px; margin: 0 auto;
+      padding: 28px 32px 0;
+      display: grid; grid-template-columns: 1fr 268px; gap: 36px;
+      align-items: start;
+    }
+    .doc-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fff8e1; border: 1px solid #ffe082;
+      border-radius: 99px; padding: 5px 15px;
+      font-size: 11px; font-weight: 700; color: #7b4a00;
+      letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .doc-tag span { width: 6px; height: 6px; border-radius: 50%; background: #b8860b; }
+    .doc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      color: var(--navy); line-height: 1.18; margin-bottom: 16px;
+    }
+    .doc-lead {
+      font-size: 15.5px; line-height: 1.8; color: var(--muted);
+      margin-bottom: 26px; max-width: 640px;
+    }
+    .doc-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-dl {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 11px 22px; border-radius: 10px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+    }
+    .btn-dl.primary { background: linear-gradient(135deg, #7b4a00, #b8860b); color: var(--white); }
+    .btn-dl.outline { background: transparent; color: var(--mid); border: 1.5px solid var(--mid); }
+    .btn-dl svg { width: 15px; height: 15px; }
+
+    /* meta card */
+    .doc-meta-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 18px; padding: 22px;
+      box-shadow: 0 2px 16px rgba(26,35,126,.06);
+    }
+    .doc-meta-card .mc-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #7b4a00; margin-bottom: 16px;
+    }
+    .meta-row { display: flex; flex-direction: column; gap: 12px; }
+    .meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .meta-item .ml { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .meta-item .mv { font-size: 13.5px; color: var(--text); font-weight: 600; }
+    .meta-divider { height: 1px; background: var(--border); }
+
+    /* ══ EXEC SUMMARY ══ */
+    .exec-wrap { max-width: 1060px; margin: 0 auto; padding: 32px 32px 0; }
+    .exec-box {
+      background: linear-gradient(135deg, #4a2600, #7b4a00);
+      border-radius: 20px; padding: 36px 40px;
+      color: var(--white); position: relative; overflow: hidden;
+    }
+    .exec-box::before {
+      content: '"';
+      position: absolute; right: 28px; top: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 140px; color: rgba(255,255,255,.07); line-height: 1;
+    }
+    .exec-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--gold); margin-bottom: 14px; letter-spacing: .5px;
+    }
+    .exec-box p { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,.85); }
+    .exec-box p + p { margin-top: 12px; }
+
+    /* ══ TOC ══ */
+    .toc-wrap { max-width: 1060px; margin: 0 auto; padding: 28px 32px 0; }
+    .toc-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 28px;
+    }
+    .toc-box h3 {
+      font-size: 11.5px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--mid); margin-bottom: 14px;
+    }
+    .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; }
+    .toc-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 13px; border-radius: 10px;
+      background: var(--bg); text-decoration: none;
+      color: var(--text); font-size: 13.5px; font-weight: 500;
+      border: 1px solid transparent;
+      transition: background .15s, border-color .15s;
+    }
+    .toc-item:hover { background: var(--light); border-color: #c5caf5; }
+    .toc-num {
+      width: 26px; height: 26px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11.5px; font-weight: 700; color: var(--white); flex-shrink: 0;
+    }
+
+    /* ══ MAIN CONTENT ══ */
+    .main-content { max-width: 1060px; margin: 0 auto; padding: 32px 32px 0; }
+
+    /* ── W-SECTION ── */
+    .w-section {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; margin-bottom: 28px; overflow: hidden;
+      box-shadow: 0 2px 14px rgba(26,35,126,.05);
+    }
+    .w-header { display: flex; align-items: stretch; }
+    .w-accent-bar { width: 6px; flex-shrink: 0; }
+    .w-title-area {
+      padding: 26px 30px 22px; flex: 1;
+      display: flex; align-items: center; gap: 18px;
+    }
+    .w-icon {
+      width: 54px; height: 54px; border-radius: 15px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 25px; flex-shrink: 0;
+    }
+    .w-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+    .w-question { font-family: 'Playfair Display', serif; font-size: 1.45rem; color: var(--navy); }
+    .w-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .w-body { padding: 0 30px 30px; }
+
+    /* prose */
+    .prose h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.12rem; color: var(--navy);
+      margin: 26px 0 10px; padding-bottom: 8px;
+      border-bottom: 2px solid var(--light);
+    }
+    .prose h3:first-child { margin-top: 0; }
+    .prose p { margin-bottom: 13px; color: #3a3d60; font-size: 14.5px; line-height: 1.8; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { color: var(--navy); }
+
+    /* callout */
+    .callout {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: #fff8e1; border-left: 4px solid #f5c842;
+      border-radius: 0 12px 12px 0; padding: 16px 18px; margin: 16px 0;
+    }
+    .callout.blue { background: #e3f2fd; border-left-color: #1565c0; }
+    .callout.green { background: #e8f5e9; border-left-color: #2e7d32; }
+    .callout .ci { font-size: 21px; flex-shrink: 0; }
+    .callout p { font-size: 14px; line-height: 1.7; margin: 0; }
+    .callout.blue p { color: #0d47a1; }
+    .callout.green p { color: #1b5e20; }
+
+    /* info card */
+    .info-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 13px; padding: 18px 20px; margin: 14px 0;
+    }
+    .info-card .ic-title { font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 8px; }
+    .info-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+    /* table */
+    .data-table { width: 100%; border-collapse: collapse; margin: 14px 0; border-radius: 12px; overflow: hidden; font-size: 13.5px; }
+    .data-table thead { background: linear-gradient(135deg, #4a2600, #7b4a00); color: var(--white); }
+    .data-table th { padding: 11px 16px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: .4px; }
+    .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: #3a3d60; vertical-align: top; }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table tbody tr:nth-child(odd) { background: #fffdf5; }
+    .data-table tbody tr:nth-child(even) { background: var(--white); }
+
+    /* steps */
+    .steps { display: flex; flex-direction: column; gap: 14px; margin: 16px 0; }
+    .step {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 13px; padding: 16px 18px;
+    }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 10px;
+      background: linear-gradient(135deg, #7b4a00, #b8860b);
+      color: var(--white); font-size: 14px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content .st { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .step-content p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.65; }
+
+    /* pillar grid */
+    .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 16px 0; }
+    .pillar {
+      padding: 20px; border-radius: 14px;
+      border: 1px solid var(--border); background: var(--white);
+    }
+    .pillar .pl-icon { font-size: 26px; margin-bottom: 10px; }
+    .pillar .pl-head { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .pillar p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* two-col */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+    .col-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px;
+    }
+    .col-card .cc-head { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .col-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .col-card ul li { display: flex; gap: 8px; align-items: flex-start; font-size: 13.5px; color: #3a3d60; line-height: 1.6; }
+    .col-card ul li::before { content: '→'; color: #b8860b; flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+
+    /* pasal badge */
+    .pasal {
+      display: inline-block; font-size: 10.5px; font-weight: 700;
+      padding: 2px 10px; border-radius: 99px;
+      background: #fff8e1; color: #7b4a00; border: 1px solid #ffe082;
+      margin-right: 6px; vertical-align: middle;
+    }
+
+    /* principle list */
+    .principle-list { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
+    .principle-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 16px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--bg);
+    }
+    .pr-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .pr-body .pr-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .pr-body p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.6; }
+
+    /* quote block */
+    .quote-block {
+      border-left: 4px solid #b8860b;
+      padding: 14px 20px; margin: 16px 0;
+      background: #fffdf5; border-radius: 0 12px 12px 0;
+    }
+    .quote-block p { font-style: italic; font-size: 14.5px; color: #5d3c00; margin: 0; line-height: 1.75; }
+    .quote-block cite { display: block; margin-top: 8px; font-size: 12px; font-weight: 600; color: #7b4a00; font-style: normal; }
+
+    /* app box */
+    .app-box {
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+      border: 1px solid #a5d6a7; border-radius: 16px;
+      padding: 26px 28px; margin: 18px 0;
+    }
+    .app-box h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #1b5e20; margin-bottom: 14px; }
+    .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .app-item {
+      background: var(--white); border-radius: 11px;
+      padding: 14px 16px; border: 1px solid #c8e6c9;
+    }
+    .app-item .ai-head { font-size: 13px; font-weight: 700; color: #2e7d32; margin-bottom: 5px; }
+    .app-item p { font-size: 12.5px; color: #4a3000; line-height: 1.65; margin: 0; }
+
+    /* comparison strip */
+    .compare-strip {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+      margin: 16px 0;
+    }
+    .compare-col { padding: 20px; }
+    .compare-col.old { background: #fafafa; border-right: 1px solid var(--border); }
+    .compare-col.new { background: #fffdf5; }
+    .compare-col .cc-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .compare-col.old .cc-label { color: var(--muted); }
+    .compare-col.new .cc-label { color: #7b4a00; }
+    .compare-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .compare-col ul li { font-size: 13.5px; color: #3a3d60; line-height: 1.6; padding-left: 16px; position: relative; }
+    .compare-col ul li::before { position: absolute; left: 0; }
+    .compare-col.old ul li::before { content: '✕'; color: #c62828; font-size: 11px; top: 3px; }
+    .compare-col.new ul li::before { content: '✓'; color: #2e7d32; font-size: 11px; top: 3px; }
+
+    /* page footer nav */
+    .page-footer { max-width: 1060px; margin: 36px auto 0; padding: 0 32px 56px; }
+    .footer-nav {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 18px 22px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .footer-nav a {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13.5px; font-weight: 600; color: var(--mid); text-decoration: none;
+    }
+    .footer-nav a:hover { color: var(--navy); }
+
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.55);
+      text-align: center; padding: 24px 32px; font-size: 12.5px;
+    }
+    footer strong { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .doc-hero { grid-template-columns: 1fr; }
+      .doc-meta-card { display: none; }
+      .pillar-grid { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .compare-strip { grid-template-columns: 1fr; }
+      .compare-col.old { border-right: none; border-bottom: 1px solid var(--border); }
+      .w-title-area { padding: 22px 20px 18px; }
+      .w-body { padding: 0 20px 24px; }
+      .main-content, .exec-wrap, .toc-wrap, .breadcrumb { padding-left: 18px; padding-right: 18px; }
+      .header-inner { padding: 24px 18px; }
+      .nav-inner { overflow-x: auto; padding: 0 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <img src="../logo_sekolah_background_putih.jpeg" alt="Logo SD Muhammadiyah 01 Kukusan"/>
+    </div>
+    <div class="hdr-text">
+      <div class="hdr-school">Portal Kebijakan Pendidikan</div>
+      <div class="hdr-name">SD Muhammadiyah 01 Kukusan</div>
+      <div class="hdr-sub">Depok, Jawa Barat &nbsp;|&nbsp; sdm01kks.github.io</div>
+    </div>
+  </div>
+  <nav class="nav-strip">
+    <div class="nav-inner">
+      <a href="../index.html">Beranda</a>
+      <a href="index.html" class="active">Program Pemerintah</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ BREADCRUMB ══ -->
+<div class="breadcrumb">
+  <a href="../index.html">Beranda</a>
+  <span>›</span>
+  <a href="index.html">Program Pemerintah</a>
+  <span>›</span>
+  Standar Proses Pendidikan 2026
+</div>
+
+<!-- ══ HERO ══ -->
+<div class="doc-hero">
+  <div>
+    <div class="doc-tag"><span></span>Permendikdasmen No.1 Tahun 2026 · Berlaku 5 Januari 2026</div>
+    <h1 class="doc-title">Standar Proses<br/>Pendidikan 2026</h1>
+    <p class="doc-lead">
+      Peraturan Menteri terbaru yang menggantikan Permendikbud No.16 Tahun 2022 — menetapkan kriteria minimal proses pembelajaran dengan tiga prinsip utama: <strong>berkesadaran, bermakna, dan menggembirakan</strong>, berlaku untuk seluruh jenjang dari PAUD hingga pendidikan menengah.
+    </p>
+    <div class="doc-actions">
+      <a href="#who" class="btn-dl primary">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+        Baca 5W 1H
+      </a>
+      <a href="https://kurikulum.kemendikdasmen.go.id/file/1768297742_manage_file.pdf" target="_blank" class="btn-dl outline">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        Unduh Dokumen Asli
+      </a>
+    </div>
+  </div>
+
+  <div class="doc-meta-card">
+    <div class="mc-title">📄 Detail Regulasi</div>
+    <div class="meta-row">
+      <div class="meta-item">
+        <span class="ml">Nomor Regulasi</span>
+        <span class="mv">Permendikdasmen No. 1 Tahun 2026</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Tentang</span>
+        <span class="mv">Standar Proses pada PAUD, Dikdas, dan Dikmen</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Ditetapkan</span>
+        <span class="mv">2 Januari 2026</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Diundangkan</span>
+        <span class="mv">5 Januari 2026</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Penandatangan</span>
+        <span class="mv">Abdul Mu'ti (Mendikdasmen)</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Menggantikan</span>
+        <span class="mv">Permendikbud No. 16 Tahun 2022</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Jumlah Pasal</span>
+        <span class="mv">21 Pasal · 5 Bab</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ EXEC SUMMARY ══ -->
+<div class="exec-wrap">
+  <div class="exec-box">
+    <h2>✦ Ringkasan Eksekutif</h2>
+    <p>
+      Permendikdasmen No. 1 Tahun 2026 hadir sebagai pembaruan mendasar atas standar proses pembelajaran nasional. Regulasi ini menegaskan bahwa proses pembelajaran harus dilaksanakan dengan <strong>saling memuliakan</strong> melalui olah pikir, olah hati, olah rasa, dan olah raga secara holistik — sebuah pergeseran signifikan dari standar lama yang lebih bersifat prosedural.
+    </p>
+    <p>
+      Tiga prinsip pembelajaran baru — <strong>berkesadaran</strong> (murid memahami tujuan belajarnya), <strong>bermakna</strong> (dapat diterapkan dalam kehidupan nyata), dan <strong>menggembirakan</strong> (positif, menantang, dan memotivasi) — menjadi fondasi seluruh perencanaan, pelaksanaan, hingga penilaian pembelajaran. Standar ini berlaku di seluruh jenjang: PAUD, Pendidikan Dasar, dan Pendidikan Menengah.
+    </p>
+  </div>
+</div>
+
+<!-- ══ PERBANDINGAN ══ -->
+<div class="toc-wrap" style="padding-bottom:0">
+  <div class="toc-box">
+    <h3>⚖️ Perbandingan dengan Standar Proses Lama (Permendikbud No.16/2022)</h3>
+    <div class="compare-strip">
+      <div class="compare-col old">
+        <div class="cc-label">Standar Lama · 2022</div>
+        <ul>
+          <li>Berfokus pada RPP sebagai dokumen utama</li>
+          <li>Pendekatan lebih birokratis dan prosedural</li>
+          <li>Penilaian proses oleh guru saja</li>
+          <li>Belum menyebut kemitraan pembelajaran secara eksplisit</li>
+          <li>Teknologi disebutkan secara terbatas</li>
+        </ul>
+      </div>
+      <div class="compare-col new">
+        <div class="cc-label">Standar Baru · 2026</div>
+        <ul>
+          <li>Fleksibel: dokumen perencanaan pembelajaran (tidak harus RPP)</li>
+          <li>Tiga prinsip humanis: berkesadaran, bermakna, menggembirakan</li>
+          <li>Penilaian proses oleh guru, sesama guru, kepala sekolah, <em>dan murid</em></li>
+          <li>Kemitraan pembelajaran (Pasal 12) sebagai komponen wajib</li>
+          <li>Pemanfaatan teknologi digital <em>dan</em> nondigital diatur eksplisit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOC ══ -->
+<div class="toc-wrap">
+  <div class="toc-box">
+    <h3>📑 Navigasi 5W 1H</h3>
+    <div class="toc-grid">
+      <a href="#who"   class="toc-item"><div class="toc-num" style="background:#c62828">W</div> WHO — Siapa?</a>
+      <a href="#what"  class="toc-item"><div class="toc-num" style="background:#1565c0">W</div> WHAT — Apa?</a>
+      <a href="#where" class="toc-item"><div class="toc-num" style="background:#2e7d32">W</div> WHERE — Di Mana?</a>
+      <a href="#when"  class="toc-item"><div class="toc-num" style="background:#6a1b9a">W</div> WHEN — Kapan?</a>
+      <a href="#why"   class="toc-item"><div class="toc-num" style="background:#e65100">W</div> WHY — Mengapa?</a>
+      <a href="#how"   class="toc-item"><div class="toc-num" style="background:#00838f">H</div> HOW — Bagaimana?</a>
+      <a href="#apply" class="toc-item"><div class="toc-num" style="background:#2e7d32">🏫</div> Aplikasi di Sekolah</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MAIN ══ -->
+<div class="main-content">
+
+  <!-- ─── WHO ─── -->
+  <section class="w-section" id="who">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#c62828"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#ffebee">👥</div>
+        <div>
+          <div class="w-label" style="color:#c62828">WHO — Siapa?</div>
+          <div class="w-question">Siapa yang Menetapkan dan Siapa yang Terdampak?</div>
+          <div class="w-sub">Pihak penerbit, pemangku kepentingan, dan subjek regulasi</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Pihak Penerbit Regulasi</h3>
+        <p>
+          Peraturan ini ditetapkan oleh <strong>Prof. Dr. Abdul Mu'ti, M.Ed.</strong> selaku Menteri Pendidikan Dasar dan Menengah Republik Indonesia, ditandatangani pada <strong>2 Januari 2026</strong>. Pengundangan dilakukan oleh <strong>Dhahana Putra</strong>, Direktur Jenderal Peraturan Perundang-undangan Kementerian Hukum RI, pada <strong>5 Januari 2026</strong>. Dokumen ini dimuat dalam Berita Negara Republik Indonesia Tahun 2026 Nomor 1 — menjadikannya regulasi pertama yang diundangkan di tahun 2026.
+        </p>
+        <h3>Tiga Aktor Utama dalam Standar Proses</h3>
+        <p>Regulasi ini mendefinisikan secara eksplisit tiga aktor utama yang terlibat dalam proses pembelajaran:</p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Aktor</th><th>Definisi dalam Permendikdasmen</th><th>Peran dalam Standar Proses</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Murid</strong></td>
+            <td>Peserta didik pada jalur formal, nonformal, dan informal pada PAUD, Dikdas, dan Dikmen dari setiap jenis pendidikan <em>(Pasal 1 ayat 2)</em></td>
+            <td>Subjek utama pembelajaran; juga berperan sebagai penilai proses pembelajaran guru</td>
+          </tr>
+          <tr>
+            <td><strong>Pendidik</strong></td>
+            <td>Tenaga kependidikan yang berpartisipasi dalam menyelenggarakan pendidikan <em>(Pasal 1 ayat 3)</em></td>
+            <td>Perencana, pelaksana, dan penilai proses pembelajaran; dinilai oleh sesama pendidik, kepala satuan, dan murid</td>
+          </tr>
+          <tr>
+            <td><strong>Satuan Pendidikan</strong></td>
+            <td>Kelompok layanan pendidikan yang menyelenggarakan pendidikan pada jalur formal, nonformal, dan informal <em>(Pasal 1 ayat 4)</em></td>
+            <td>Penyedia lingkungan belajar; kepala satuan pendidikan berperan menilai dan memberi umpan balik kepada pendidik</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="prose">
+        <h3>Pihak yang Terdampak Langsung</h3>
+        <p>Standar ini berlaku bagi <strong>semua guru, kepala sekolah, dan murid</strong> di seluruh jenjang — dari pendidikan anak usia dini, sekolah dasar, sekolah menengah pertama, hingga sekolah menengah atas dan kejuruan, termasuk sekolah luar biasa dan pusat kegiatan belajar masyarakat (PKBM). Di SD Muhammadiyah 01 Kukusan, ini berarti seluruh guru kelas, guru mata pelajaran, kepala sekolah, dan tentu saja seluruh murid dari kelas 1 hingga kelas 6.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHAT ─── -->
+  <section class="w-section" id="what">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#1565c0"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#e3f2fd">📐</div>
+        <div>
+          <div class="w-label" style="color:#1565c0">WHAT — Apa?</div>
+          <div class="w-question">Apa Itu Standar Proses 2026?</div>
+          <div class="w-sub">Definisi, cakupan, prinsip, dan tiga komponen utama standar</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Definisi Resmi</h3>
+      </div>
+
+      <div class="callout">
+        <span class="ci">📌</span>
+        <p><span class="pasal">Pasal 1 ayat 1</span> <strong>Standar Proses</strong> adalah <em>kriteria minimal proses pembelajaran berdasarkan jalur, jenjang, dan jenis pendidikan untuk mencapai standar kompetensi lulusan.</em></p>
+      </div>
+
+      <div class="prose">
+        <h3>Tiga Komponen Standar Proses <span class="pasal">Pasal 2</span></h3>
+        <p>Standar Proses mencakup tiga komponen yang saling terkait dan tidak dapat dipisahkan:</p>
+      </div>
+
+      <div class="pillar-grid">
+        <div class="pillar">
+          <div class="pl-icon">📝</div>
+          <div class="pl-head">a. Perencanaan Pembelajaran</div>
+          <p>Aktivitas merumuskan tujuan belajar, cara mencapainya, dan cara menilai ketercapaiannya — dituangkan dalam dokumen perencanaan yang memuat tujuan, langkah, dan penilaian pembelajaran.</p>
+        </div>
+        <div class="pillar">
+          <div class="pl-icon">🏃</div>
+          <div class="pl-head">b. Pelaksanaan Pembelajaran</div>
+          <p>Kegiatan nyata di kelas yang menciptakan suasana interaktif, inspiratif, menyenangkan, menantang, dan memotivasi murid. Dilakukan melalui keteladanan, pendampingan, dan fasilitasi oleh pendidik.</p>
+        </div>
+        <div class="pillar">
+          <div class="pl-icon">🔍</div>
+          <div class="pl-head">c. Penilaian Proses Pembelajaran</div>
+          <p>Asesmen terhadap kualitas perencanaan dan pelaksanaan pembelajaran, dilakukan oleh pendidik sendiri, sesama pendidik, kepala satuan pendidikan, <em>dan murid</em> — minimal satu kali per semester.</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Tiga Prinsip Pembelajaran Baru <span class="pasal">Pasal 3</span></h3>
+        <p>Inilah inti perubahan terbesar dibandingkan standar lama. Seluruh proses pembelajaran harus dilaksanakan dengan <strong>saling memuliakan</strong> melalui olah pikir, olah hati, olah rasa, dan olah raga secara holistik, berdasarkan tiga prinsip:</p>
+      </div>
+
+      <div class="principle-list">
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#c62828"></div>
+          <div class="pr-body">
+            <div class="pr-name">1. Berkesadaran <span class="pasal">Pasal 3 ayat 2</span></div>
+            <p>Proses pembelajaran yang membantu murid <strong>memahami tujuan pembelajaran</strong> sehingga termotivasi, aktif belajar, dan mampu mengatur diri sendiri. Murid tidak sekadar menjalankan instruksi — mereka tahu <em>mengapa</em> mereka belajar sesuatu.</p>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#1565c0"></div>
+          <div class="pr-body">
+            <div class="pr-name">2. Bermakna <span class="pasal">Pasal 3 ayat 3</span></div>
+            <p>Proses pembelajaran yang terjadi ketika murid dapat <strong>menerapkan apa yang dipelajari</strong> dan membangun pengetahuan baru dalam kehidupan nyata, secara kontekstual, dan/atau yang terkait bidang ilmu lain. Belajar bukan hafalan — tetapi pemahaman yang bisa digunakan.</p>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#2e7d32"></div>
+          <div class="pr-body">
+            <div class="pr-name">3. Menggembirakan <span class="pasal">Pasal 3 ayat 4</span></div>
+            <p>Proses pembelajaran yang <strong>positif, menantang, menyenangkan, dan memotivasi</strong>. Suasana belajar yang baik bukan yang membebani, melainkan yang membuat murid antusias dan percaya diri dalam menghadapi tantangan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHERE ─── -->
+  <section class="w-section" id="where">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#2e7d32"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#e8f5e9">🗺️</div>
+        <div>
+          <div class="w-label" style="color:#2e7d32">WHERE — Di Mana?</div>
+          <div class="w-question">Di Mana Standar Proses Ini Berlaku?</div>
+          <div class="w-sub">Jenjang, jalur, jenis pendidikan, dan lingkungan belajar yang dimaksud</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Cakupan Jenjang dan Jalur Pendidikan</h3>
+        <p>Standar ini berlaku secara nasional untuk seluruh satuan pendidikan di Indonesia, tanpa terkecuali:</p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Jenjang</th><th>Bentuk Satuan Pendidikan</th><th>Catatan Khusus</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PAUD</strong></td><td>TK, RA, KB, TPA, SPS</td><td>Berlaku sama — termasuk pendidikan informal</td></tr>
+          <tr><td><strong>Pendidikan Dasar</strong></td><td>SD, MI, SMP, MTs, SDLB, SMPLB</td><td>Termasuk pendidikan kesetaraan Paket A &amp; B</td></tr>
+          <tr><td><strong>Pendidikan Menengah Umum</strong></td><td>SMA, MA, SMALB</td><td>Termasuk pendidikan kesetaraan Paket C</td></tr>
+          <tr><td><strong>Pendidikan Menengah Kejuruan</strong></td><td>SMK, MAK</td><td>Ditambah praktik kerja lapangan <em>(Pasal 13)</em></td></tr>
+          <tr><td><strong>Pendidikan Khusus</strong></td><td>SLB jenjang menengah</td><td>Ditambah program magang <em>(Pasal 13)</em></td></tr>
+        </tbody>
+      </table>
+
+      <div class="prose">
+        <h3>Empat Dimensi Lingkungan Pembelajaran <span class="pasal">Pasal 12</span></h3>
+        <p>Standar ini juga mendefinisikan lingkungan pembelajaran secara holistik melalui kerangka empat komponen:</p>
+      </div>
+
+      <div class="two-col">
+        <div class="col-card">
+          <div class="cc-head">🎓 Praktik Pedagogis</div>
+          <ul>
+            <li>Strategi pembelajaran berfokus pada pengalaman belajar murid</li>
+            <li>Mencakup pemilihan metode, media, dan teknik penilaian</li>
+            <li>Diarahkan untuk mencapai tujuan pembelajaran secara optimal</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <div class="cc-head">🤝 Kemitraan Pembelajaran</div>
+          <ul>
+            <li>Hubungan kolaboratif antar pendidik</li>
+            <li>Kolaborasi pendidik dengan murid, orang tua, dan masyarakat</li>
+            <li>Melibatkan mitra lain yang relevan (komunitas, dunia usaha)</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <div class="cc-head">🏫 Lingkungan Pembelajaran</div>
+          <ul>
+            <li>Kondisi fisik: ruang kelas, fasilitas, kelengkapan</li>
+            <li>Kondisi virtual: platform digital, e-learning</li>
+            <li>Kondisi sosial: budaya belajar yang aman dan inklusif</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <div class="cc-head">💻 Pemanfaatan Teknologi</div>
+          <ul>
+            <li>Optimalisasi teknologi digital <em>maupun</em> nondigital</li>
+            <li>Menciptakan pembelajaran interaktif dan kolaboratif</li>
+            <li>Disesuaikan dengan konteks dan ketersediaan sumber daya</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHEN ─── -->
+  <section class="w-section" id="when">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#6a1b9a"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#f3e5f5">⏰</div>
+        <div>
+          <div class="w-label" style="color:#6a1b9a">WHEN — Kapan?</div>
+          <div class="w-question">Kapan Berlaku dan Bagaimana Linimasa Regulasinya?</div>
+          <div class="w-sub">Tanggal penetapan, pengundangan, dan ketentuan peralihan</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="st">2008 — Standar Proses Awal</div>
+            <p>Permendiknas No. 3 Tahun 2008 tentang Standar Proses Pendidikan Kesetaraan (Paket A, B, C) — peraturan standar proses pertama yang akan dicabut oleh regulasi baru ini.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="st">2022 — Generasi Sebelumnya</div>
+            <p>Permendikbud No. 16 Tahun 2022 menggantikan standar lama dan menjadi rujukan selama era Kurikulum Merdeka awal. Standar inilah yang kini resmi dicabut dan dinyatakan tidak berlaku.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="st">2 Januari 2026 — Ditetapkan</div>
+            <p>Permendikdasmen No. 1 Tahun 2026 ditandatangani oleh Menteri Abdul Mu'ti di Jakarta — dua hari setelah tahun baru 2026, menjadi kebijakan pertama Kemendikdasmen di tahun tersebut.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="st">5 Januari 2026 — Diundangkan dan Mulai Berlaku</div>
+            <p>Sesuai Pasal 21, peraturan ini mulai berlaku pada tanggal diundangkan. Dimuat dalam Berita Negara RI Tahun 2026 Nomor 1. Sejak saat ini, seluruh sekolah di Indonesia wajib mengacu pada standar baru ini.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="st">Semester Genap 2025/2026 — Implementasi Awal</div>
+            <p>Mengingat berlaku mulai Januari 2026, semester genap tahun ajaran 2025/2026 menjadi momen pertama wajib implementasi standar proses baru ini di seluruh satuan pendidikan, termasuk SD Muhammadiyah 01 Kukusan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout blue">
+        <span class="ci">⚡</span>
+        <p><strong>Penting:</strong> Tidak ada masa transisi yang disebutkan dalam regulasi ini. Peraturan langsung berlaku saat diundangkan pada 5 Januari 2026. Artinya, sekolah <strong>wajib segera menyesuaikan</strong> dokumen perencanaan dan praktik pembelajaran dengan standar baru ini.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHY ─── -->
+  <section class="w-section" id="why">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#e65100"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#fff3e0">❓</div>
+        <div>
+          <div class="w-label" style="color:#e65100">WHY — Mengapa?</div>
+          <div class="w-question">Mengapa Standar Proses Perlu Diperbarui?</div>
+          <div class="w-sub">Latar belakang, alasan hukum, dan urgensi perubahan</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Dua Alasan Resmi dalam Konsiderans</h3>
+        <p>Dalam bagian <strong>"Menimbang"</strong>, Permendikdasmen No. 1/2026 menyebutkan dua alasan utama perlunya regulasi baru ini:</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:linear-gradient(135deg,#bf360c,#e64a19)">a</div>
+          <div class="step-content">
+            <div class="st">Menjamin Proses Pembelajaran yang Efektif</div>
+            <p>Diperlukan standar proses baru untuk memastikan pembelajaran dilaksanakan secara efektif dan mendukung pencapaian standar kompetensi lulusan yang ditetapkan. Standar proses harus selaras dengan standar kompetensi lulusan yang juga telah diperbarui.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:linear-gradient(135deg,#bf360c,#e64a19)">b</div>
+          <div class="step-content">
+            <div class="st">Menyesuaikan dengan Perkembangan Zaman</div>
+            <p>Permendikbud No. 16 Tahun 2022 perlu disesuaikan dengan <strong>pendekatan pembelajaran yang relevan dengan perkembangan ilmu pengetahuan, teknologi, dan dinamika sosial</strong> — sehingga perlu diganti, bukan sekadar direvisi.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Landasan Hukum Pembentukan</h3>
+        <p>Penerbitan regulasi ini mengacu pada hierarki perundangan yang kuat:</p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Dasar Hukum</th><th>Substansi yang Digunakan</th></tr></thead>
+        <tbody>
+          <tr><td>UUD NRI 1945 Pasal 17 ayat (3)</td><td>Kewenangan kementerian menerbitkan peraturan</td></tr>
+          <tr><td>UU No. 20 Tahun 2003 (Sisdiknas)</td><td>Sistem pendidikan nasional sebagai kerangka dasar</td></tr>
+          <tr><td>PP No. 57 Tahun 2021 jo PP No. 4/2022 (SNP)</td><td>Pasal 15 — kewajiban menetapkan standar proses</td></tr>
+          <tr><td>Perpres No. 188 Tahun 2024 (Kemendikdasmen)</td><td>Pembentukan Kementerian Pendidikan Dasar dan Menengah</td></tr>
+          <tr><td>Permendikdasmen No. 1 Tahun 2024 (OTK)</td><td>Organisasi dan tata kerja kementerian</td></tr>
+        </tbody>
+      </table>
+
+      <div class="quote-block">
+        <p>Standar proses baru ini mencerminkan filosofi bahwa pendidikan bukan hanya tentang transfer ilmu, tetapi tentang proses saling memuliakan yang menghormati kemanusiaan guru dan murid secara setara — melalui olah pikir, olah hati, olah rasa, dan olah raga.</p>
+        <cite>— Tafsir atas Pasal 3 ayat (1), Permendikdasmen No. 1 Tahun 2026</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW ─── -->
+  <section class="w-section" id="how">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#00838f"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#e0f7fa">⚙️</div>
+        <div>
+          <div class="w-label" style="color:#00838f">HOW — Bagaimana?</div>
+          <div class="w-question">Bagaimana Standar Proses Ini Dilaksanakan?</div>
+          <div class="w-sub">Mekanisme perencanaan, pelaksanaan, dan penilaian proses pembelajaran</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+
+      <!-- PERENCANAAN -->
+      <div class="prose">
+        <h3>A. Perencanaan Pembelajaran <span class="pasal">Bab II · Pasal 4–8</span></h3>
+        <p>Perencanaan merupakan aktivitas merumuskan tiga hal pokok yang dituangkan dalam sebuah <strong>dokumen perencanaan pembelajaran</strong>:</p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Komponen Dokumen</th><th>Pengertian <em>(Pasal)</em></th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>a. Tujuan Pembelajaran</strong></td>
+            <td>Kompetensi dan konten pada ruang lingkup materi yang harus dicapai murid — mengacu pada SKL dan standar isi, mempertimbangkan karakteristik murid dan sumber daya sekolah <em>(Pasal 6)</em></td>
+          </tr>
+          <tr>
+            <td><strong>b. Langkah Pembelajaran</strong></td>
+            <td>Tahapan yang dirancang untuk memberi pengalaman belajar kepada murid dalam rangka mencapai tujuan pembelajaran, dilaksanakan dengan prinsip berkesadaran, bermakna, dan menggembirakan <em>(Pasal 7)</em></td>
+          </tr>
+          <tr>
+            <td><strong>c. Penilaian/Asesmen</strong></td>
+            <td>Menggunakan beragam teknik dan instrumen yang sesuai tujuan pembelajaran, mengacu pada standar penilaian pendidikan <em>(Pasal 8)</em></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout green">
+        <span class="ci">💡</span>
+        <p><strong>Catatan Penting:</strong> Standar baru ini tidak mewajibkan format RPP tertentu. Yang diwajibkan adalah <em>dokumen perencanaan pembelajaran</em> yang memuat minimal tiga komponen di atas. Guru lebih fleksibel dalam merancang dokumen perencanaan sesuai kebutuhan dan konteks.</p>
+      </div>
+
+      <!-- PELAKSANAAN -->
+      <div class="prose">
+        <h3>B. Pelaksanaan Pembelajaran <span class="pasal">Bab III · Pasal 9–14</span></h3>
+        <p>Pelaksanaan pembelajaran diatur dalam tiga lapisan yang saling menopang:</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:linear-gradient(135deg,#006064,#00acc1)">1</div>
+          <div class="step-content">
+            <div class="st">Suasana Belajar yang Diciptakan <span class="pasal">Pasal 9</span></div>
+            <p>Interaktif · Inspiratif · Menyenangkan · Menantang · Memotivasi partisipasi aktif · Memberi ruang prakarsa dan kreativitas murid. Diciptakan melalui lingkungan belajar yang aman, nyaman, dan inklusif.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:linear-gradient(135deg,#006064,#00acc1)">2</div>
+          <div class="step-content">
+            <div class="st">Tiga Peran Pendidik <span class="pasal">Pasal 9 ayat 3</span></div>
+            <p><strong>Keteladanan:</strong> menunjukkan perilaku mulia, terbuka, dan saling menghargai. <strong>Pendampingan:</strong> memberi dukungan dan mendorong murid membangun pengetahuan aktif. <strong>Fasilitasi:</strong> menyediakan akses belajar dan memberi ruang murid menciptakan strategi belajarnya sendiri.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:linear-gradient(135deg,#006064,#00acc1)">3</div>
+          <div class="step-content">
+            <div class="st">Tiga Pengalaman Belajar Murid <span class="pasal">Pasal 10</span></div>
+            <p><strong>Memahami:</strong> membangun sikap, pengetahuan, dan keterampilan dari berbagai sumber. <strong>Mengaplikasi:</strong> menggunakan pengetahuan dalam situasi kehidupan nyata. <strong>Merefleksi:</strong> mengevaluasi dan memaknai proses belajar untuk mengatur diri sendiri.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PENILAIAN PROSES -->
+      <div class="prose">
+        <h3>C. Penilaian Proses Pembelajaran <span class="pasal">Bab IV · Pasal 15–19</span></h3>
+        <p>Ini adalah inovasi terbesar Standar Proses 2026: penilaian kualitas mengajar tidak lagi hanya oleh guru sendiri, tetapi oleh <strong>empat pihak</strong>:</p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Penilai</th><th>Tujuan</th><th>Frekuensi</th><th>Mekanisme</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Pendidik Sendiri</strong> <em>(Pasal 15)</em></td>
+            <td>Refleksi diri atas perencanaan dan pelaksanaan</td>
+            <td>Min. 1× per semester</td>
+            <td>Refleksi diri, dapat mengacu analisis hasil belajar murid atau AKM</td>
+          </tr>
+          <tr>
+            <td><strong>Sesama Pendidik</strong> <em>(Pasal 17)</em></td>
+            <td>Membangun budaya saling belajar dan kerja sama</td>
+            <td>Min. 1× per semester</td>
+            <td>Diskusi perencanaan, observasi kelas, refleksi bersama</td>
+          </tr>
+          <tr>
+            <td><strong>Kepala Satuan Pendidikan</strong> <em>(Pasal 18)</em></td>
+            <td>Budaya reflektif dan umpan balik konstruktif</td>
+            <td>Min. 1× per semester</td>
+            <td>Supervisi akademik, analisis hasil belajar murid, umpan balik</td>
+          </tr>
+          <tr>
+            <td><strong>Murid</strong> <em>(Pasal 19)</em></td>
+            <td>Kemandirian, tanggung jawab, dan suasana partisipatif</td>
+            <td>Min. 1× per semester per mapel</td>
+            <td>Survei refleksi, catatan refleksi, atau diskusi refleksi proses pembelajaran</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── APLIKASI DI SEKOLAH ─── -->
+  <section class="w-section" id="apply">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#2e7d32"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#e8f5e9">🏫</div>
+        <div>
+          <div class="w-label" style="color:#2e7d32">APLIKASI SEKOLAH</div>
+          <div class="w-question">Implementasi di SD Muhammadiyah 01 Kukusan</div>
+          <div class="w-sub">Langkah konkret menyambut dan menerapkan Standar Proses 2026</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="app-box">
+        <h3>🎯 Rencana Aksi SD Muhammadiyah 01 Kukusan</h3>
+        <div class="app-grid">
+          <div class="app-item">
+            <div class="ai-head">📝 Revisi Dokumen Ajar</div>
+            <p>Pastikan setiap dokumen perencanaan pembelajaran (modul ajar/RPP) memuat minimal tiga komponen wajib: tujuan, langkah, dan penilaian pembelajaran — sesuai prinsip berkesadaran, bermakna, menggembirakan.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">🧑‍🏫 Pelatihan Guru</div>
+            <p>Adakan in-house training tentang tiga prinsip pembelajaran baru dan pemaknaan "saling memuliakan" dalam praktik kelas sehari-hari. Hubungkan dengan nilai-nilai Islam Kemuhammadiyahan.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">🤝 Supervisi Kolegial</div>
+            <p>Jadwalkan sesi observasi kelas antar guru (peer observation) minimal sekali per semester. Buat format refleksi sederhana yang tidak memberatkan tetapi bermakna bagi pengembangan profesional guru.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">🎙️ Suara Murid</div>
+            <p>Rancang instrumen sederhana untuk memperoleh umpan balik murid terhadap proses pembelajaran guru — bisa berupa survei bergambar untuk kelas rendah dan kuesioner singkat untuk kelas tinggi.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">🔗 Kemitraan Orang Tua</div>
+            <p>Sosialisasikan standar proses baru kepada orang tua dalam pertemuan awal semester. Libatkan mereka sebagai mitra dalam mendukung pengalaman belajar murid di rumah.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">📊 Supervisi Kepala Sekolah</div>
+            <p>Susun jadwal supervisi akademik semester yang mencakup observasi kelas, analisis hasil AKM/penilaian, dan sesi umpan balik konstruktif dengan setiap guru secara terstruktur.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="ci">🌟</span>
+        <p>
+          <strong>Peluang bagi SD Muhammadiyah 01 Kukusan:</strong> Tiga prinsip standar proses baru — berkesadaran, bermakna, dan menggembirakan — sangat selaras dengan nilai-nilai pendidikan Islam yang menekankan niat yang jelas, ilmu yang bermanfaat, dan suasana belajar yang penuh kasih sayang. Jadikan standar ini sebagai <em>bingkai Islami</em> pembelajaran sehari-hari, bukan sekadar kepatuhan administratif.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /main-content -->
+
+<!-- ══ BOTTOM NAV ══ -->
+<div class="page-footer">
+  <div class="footer-nav">
+    <a href="gerakan-numerasi-nasional.html">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+      ← Gerakan Numerasi Nasional
+    </a>
+    <a href="index.html" style="color:var(--muted)">
+      Lihat Semua Program
+    </a>
+    <a href="#">
+      Juknis Keterampilan Menulis →
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 <strong>SD Muhammadiyah 01 Kukusan</strong> · Depok, Jawa Barat</p>
+  <p style="margin-top:4px;font-size:11.5px;">
+    Sumber: Permendikdasmen No. 1 Tahun 2026, Berita Negara RI Tahun 2026 No. 1 &nbsp;|&nbsp;
+    <a href="https://kurikulum.kemendikdasmen.go.id/file/1768297742_manage_file.pdf" target="_blank" style="color:var(--gold)">Unduh dokumen asli</a>
+  </p>
+</footer>
+
+</body>
+</html>
