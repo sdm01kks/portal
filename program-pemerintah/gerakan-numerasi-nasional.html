@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerakan Numerasi Nasional — SD Muhammadiyah 01 Kukusan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:    #1a237e;
+      --royal:   #283593;
+      --mid:     #3949ab;
+      --soft:    #5c6bc0;
+      --accent:  #e8b84b;
+      --gold:    #f5c842;
+      --light:   #e8eaf6;
+      --bg:      #f4f5fb;
+      --white:   #ffffff;
+      --text:    #1c1f3a;
+      --muted:   #5c6394;
+      --border:  #dde0f0;
+
+      --w:  #d32f2f;  /* WHO  — merah */
+      --wt: #1565c0;  /* WHAT — biru */
+      --wh: #2e7d32;  /* WHERE */
+      --wn: #6a1b9a;  /* WHEN — ungu */
+      --wy: #e65100;  /* WHY  — oranye */
+      --hw: #00838f;  /* HOW  — teal */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* ══ HEADER ══ */
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--royal) 55%, var(--mid) 100%);
+      position: relative; overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(232,184,75,.18) 0%, transparent 50%),
+        radial-gradient(circle at 8% 75%, rgba(255,255,255,.06) 0%, transparent 40%);
+    }
+    header::after {
+      content: '';
+      position: absolute; right: -70px; bottom: -70px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      border: 45px solid rgba(232,184,75,.1);
+    }
+
+    .header-inner {
+      position: relative;
+      max-width: 1060px; margin: 0 auto;
+      padding: 34px 32px 30px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .logo-wrap {
+      flex-shrink: 0; width: 80px; height: 80px;
+      background: rgba(255,255,255,.12);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid rgba(232,184,75,.45);
+      padding: 8px; backdrop-filter: blur(4px);
+    }
+    .logo-wrap img { width: 100%; object-fit: contain; filter: brightness(0) invert(1); }
+    .hdr-text .hdr-school {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+    }
+    .hdr-text .hdr-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      color: var(--white); font-weight: 900; line-height: 1.2;
+    }
+    .hdr-text .hdr-sub { font-size: 12.5px; color: rgba(255,255,255,.65); margin-top: 5px; }
+
+    .nav-strip { background: rgba(0,0,0,.18); border-top: 1px solid rgba(255,255,255,.1); }
+    .nav-inner { max-width: 1060px; margin: 0 auto; padding: 0 32px; display: flex; gap: 0; }
+    .nav-inner a {
+      padding: 13px 18px; font-size: 12.5px; font-weight: 600;
+      color: rgba(255,255,255,.7); text-decoration: none;
+      letter-spacing: .4px;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .nav-inner a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .nav-inner a.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ══ BREADCRUMB ══ */
+    .breadcrumb {
+      max-width: 1060px; margin: 0 auto;
+      padding: 18px 32px 0;
+      font-size: 12.5px; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--mid); text-decoration: none; font-weight: 500; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* ══ HERO CONTENT ══ */
+    .doc-hero {
+      max-width: 1060px; margin: 0 auto;
+      padding: 28px 32px 0;
+      display: grid; grid-template-columns: 1fr 260px; gap: 40px;
+      align-items: start;
+    }
+    .doc-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--light); border: 1px solid #c5caf5;
+      border-radius: 99px; padding: 5px 15px;
+      font-size: 11px; font-weight: 700; color: var(--mid);
+      letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .doc-tag span { width: 6px; height: 6px; border-radius: 50%; background: var(--mid); }
+    .doc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      color: var(--navy); line-height: 1.18; margin-bottom: 16px;
+    }
+    .doc-lead {
+      font-size: 15.5px; line-height: 1.8; color: var(--muted);
+      margin-bottom: 28px; max-width: 640px;
+    }
+
+    /* meta box */
+    .doc-meta-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 22px;
+      box-shadow: 0 2px 16px rgba(26,35,126,.06);
+    }
+    .doc-meta-card .mc-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--mid); margin-bottom: 16px;
+    }
+    .meta-row { display: flex; flex-direction: column; gap: 12px; }
+    .meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .meta-item .ml { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .meta-item .mv { font-size: 13.5px; color: var(--text); font-weight: 600; }
+    .meta-divider { height: 1px; background: var(--border); margin: 4px 0; }
+
+    /* doc action */
+    .doc-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+    .btn-dl {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 20px; border-radius: 10px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+      border: none; cursor: pointer;
+    }
+    .btn-dl.primary { background: linear-gradient(135deg, var(--navy), var(--mid)); color: var(--white); }
+    .btn-dl.outline { background: transparent; color: var(--mid); border: 1.5px solid var(--mid); }
+    .btn-dl svg { width: 15px; height: 15px; }
+
+    /* ══ EXECUTIVE SUMMARY BOX ══ */
+    .exec-wrap { max-width: 1060px; margin: 0 auto; padding: 32px 32px 0; }
+    .exec-box {
+      background: linear-gradient(135deg, var(--navy), var(--royal));
+      border-radius: 20px; padding: 36px 40px;
+      color: var(--white); position: relative; overflow: hidden;
+    }
+    .exec-box::before {
+      content: '"';
+      position: absolute; right: 32px; top: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 140px; color: rgba(255,255,255,.07); line-height: 1;
+    }
+    .exec-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; color: var(--gold); margin-bottom: 14px;
+      letter-spacing: .5px;
+    }
+    .exec-box p { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,.85); }
+    .exec-box p + p { margin-top: 12px; }
+
+    /* ══ TOC ══ */
+    .toc-wrap { max-width: 1060px; margin: 0 auto; padding: 32px 32px 0; }
+    .toc-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 26px 28px;
+    }
+    .toc-box h3 {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--mid); margin-bottom: 16px;
+    }
+    .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+    .toc-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; border-radius: 10px;
+      background: var(--bg); text-decoration: none;
+      color: var(--text); font-size: 13.5px; font-weight: 500;
+      border: 1px solid transparent;
+      transition: background .15s, border-color .15s;
+    }
+    .toc-item:hover { background: var(--light); border-color: #c5caf5; }
+    .toc-item .toc-num {
+      width: 26px; height: 26px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: var(--white);
+      flex-shrink: 0;
+    }
+
+    /* ══ MAIN CONTENT ══ */
+    .main-content { max-width: 1060px; margin: 0 auto; padding: 36px 32px 0; }
+
+    /* 5W1H section */
+    .w-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-bottom: 32px;
+      overflow: hidden;
+      box-shadow: 0 2px 14px rgba(26,35,126,.05);
+    }
+    .w-header {
+      display: flex; align-items: stretch; gap: 0;
+    }
+    .w-accent-bar { width: 6px; flex-shrink: 0; }
+    .w-title-area {
+      padding: 28px 32px 24px; flex: 1;
+      display: flex; align-items: center; gap: 18px;
+    }
+    .w-icon {
+      width: 56px; height: 56px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; flex-shrink: 0;
+    }
+    .w-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+    .w-question { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); }
+    .w-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+    .w-body { padding: 0 32px 32px; }
+
+    /* prose helpers */
+    .prose h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; color: var(--navy);
+      margin: 28px 0 10px; padding-bottom: 8px;
+      border-bottom: 2px solid var(--light);
+    }
+    .prose h3:first-child { margin-top: 0; }
+    .prose p { margin-bottom: 14px; color: #3a3d60; font-size: 14.5px; line-height: 1.8; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { color: var(--navy); }
+
+    /* info-card */
+    .info-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 22px; margin: 18px 0;
+    }
+    .info-card .ic-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+    .info-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+    /* callout */
+    .callout {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: #fffde7; border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0; padding: 16px 18px; margin: 18px 0;
+    }
+    .callout .ci { font-size: 22px; flex-shrink: 0; }
+    .callout p { font-size: 14px; color: #5d4037; line-height: 1.7; margin: 0; }
+
+    /* tag list */
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag-pill {
+      background: var(--light); border: 1px solid #c5caf5;
+      border-radius: 99px; padding: 5px 14px;
+      font-size: 12.5px; font-weight: 600; color: var(--mid);
+    }
+
+    /* numbered steps */
+    .steps { display: flex; flex-direction: column; gap: 16px; margin: 16px 0; }
+    .step {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px 18px;
+    }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--navy), var(--mid));
+      color: var(--white); font-size: 14px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content .st { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .step-content p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.65; }
+
+    /* data table */
+    .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; border-radius: 12px; overflow: hidden; font-size: 13.5px; }
+    .data-table thead { background: linear-gradient(135deg, var(--navy), var(--mid)); color: var(--white); }
+    .data-table th { padding: 12px 16px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: .5px; }
+    .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: #3a3d60; }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table tbody tr:nth-child(odd) { background: #fafbff; }
+    .data-table tbody tr:nth-child(even) { background: var(--white); }
+
+    /* tri-card */
+    .tri-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 18px 0; }
+    .tri-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px;
+    }
+    .tri-card .tc-icon { font-size: 28px; margin-bottom: 10px; }
+    .tri-card .tc-head { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .tri-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* impact list */
+    .impact-list { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+    .impact-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 15px 18px; border-radius: 13px;
+      border: 1px solid var(--border); background: var(--white);
+    }
+    .impact-item .imp-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 900;
+      color: var(--accent); flex-shrink: 0; line-height: 1; margin-top: 2px;
+    }
+    .impact-item .imp-txt .it { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .impact-item .imp-txt p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.65; }
+
+    /* pillars */
+    .pillar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 18px 0; }
+    .pillar {
+      padding: 20px; border-radius: 14px;
+      border: 1px solid var(--border); background: var(--white);
+    }
+    .pillar .pl-icon { font-size: 24px; margin-bottom: 10px; }
+    .pillar .pl-head { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .pillar p { font-size: 13px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* principle list */
+    .principle-list { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+    .principle-item {
+      display: flex; gap: 14px; align-items: center;
+      padding: 14px 16px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--bg);
+    }
+    .principle-item .pr-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .principle-item .pr-name { font-size: 14px; font-weight: 700; color: var(--navy); min-width: 220px; }
+    .principle-item .pr-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+    /* stakeholder cards */
+    .stake-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 16px 0; }
+    .stake-card {
+      padding: 20px; border-radius: 14px;
+      border: 1px solid var(--border); background: var(--white);
+    }
+    .stake-card .sk-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .stake-card .sk-icon { font-size: 22px; }
+    .stake-card .sk-title { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .stake-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .stake-card ul li { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--muted); }
+    .stake-card ul li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 700; }
+
+    /* application box */
+    .app-box {
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+      border: 1px solid #a5d6a7; border-radius: 16px;
+      padding: 28px 30px; margin: 20px 0;
+    }
+    .app-box h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #1b5e20; margin-bottom: 14px; }
+    .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .app-item {
+      background: var(--white); border-radius: 11px;
+      padding: 14px 16px; border: 1px solid #c8e6c9;
+    }
+    .app-item .ai-head { font-size: 13px; font-weight: 700; color: #2e7d32; margin-bottom: 5px; }
+    .app-item p { font-size: 12.5px; color: #5d4037; line-height: 1.6; margin: 0; }
+
+    /* quote block */
+    .quote-block {
+      border-left: 4px solid var(--mid);
+      padding: 14px 20px; margin: 18px 0;
+      background: var(--light); border-radius: 0 12px 12px 0;
+    }
+    .quote-block p { font-style: italic; font-size: 14.5px; color: var(--royal); margin: 0; }
+    .quote-block cite { display: block; margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--mid); font-style: normal; }
+
+    /* ══ FOOTER ══ */
+    .page-footer {
+      max-width: 1060px; margin: 40px auto 0;
+      padding: 0 32px 56px;
+    }
+    .footer-nav {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .footer-nav a {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13.5px; font-weight: 600; color: var(--mid);
+      text-decoration: none;
+    }
+    .footer-nav a:hover { color: var(--navy); }
+
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.55);
+      text-align: center; padding: 24px 32px; font-size: 12.5px;
+    }
+    footer strong { color: var(--gold); }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .doc-hero { grid-template-columns: 1fr; }
+      .doc-meta-card { display: none; }
+      .tri-grid { grid-template-columns: 1fr; }
+      .pillar-grid { grid-template-columns: 1fr; }
+      .stake-grid { grid-template-columns: 1fr; }
+      .w-title-area { padding: 22px 20px 18px; }
+      .w-body { padding: 0 20px 24px; }
+      .main-content, .exec-wrap, .toc-wrap, .breadcrumb { padding-left: 20px; padding-right: 20px; }
+      .header-inner { padding: 24px 20px; }
+      .nav-inner { overflow-x: auto; padding: 0 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .principle-item { flex-direction: column; align-items: flex-start; }
+      .principle-item .pr-name { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <img src="../logo_sekolah_tanpa_background.png" alt="Logo SD Muhammadiyah 01 Kukusan"/>
+    </div>
+    <div class="hdr-text">
+      <div class="hdr-school">Portal Kebijakan Pendidikan</div>
+      <div class="hdr-name">SD Muhammadiyah 01 Kukusan</div>
+      <div class="hdr-sub">Depok, Jawa Barat &nbsp;|&nbsp; sdm01kks.github.io</div>
+    </div>
+  </div>
+  <nav class="nav-strip">
+    <div class="nav-inner">
+      <a href="../index.html">Beranda</a>
+      <a href="../index.html#program" class="active">Program Pemerintah</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ BREADCRUMB ══ -->
+<div class="breadcrumb">
+  <a href="../index.html">Beranda</a>
+  <span>›</span>
+  <a href="../index.html#program">Program Pemerintah</a>
+  <span>›</span>
+  Gerakan Numerasi Nasional
+</div>
+
+<!-- ══ HERO ══ -->
+<div class="doc-hero">
+  <div>
+    <div class="doc-tag"><span></span>Naskah Akademik · Kemendikdasmen · Januari 2026</div>
+    <h1 class="doc-title">Gerakan Numerasi Nasional (GNN)</h1>
+    <p class="doc-lead">
+      Sebuah gerakan strategis nasional untuk meningkatkan kemampuan numerasi masyarakat Indonesia — dipandang bukan sekadar program teknis, melainkan gerakan kultural yang mengubah cara pandang bangsa terhadap matematika dan penalaran berbasis data.
+    </p>
+    <div class="doc-actions">
+      <a href="#who" class="btn-dl primary">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+        Baca 5W 1H
+      </a>
+      <a href="https://bskap.kemdikbud.go.id" target="_blank" class="btn-dl outline">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        Dokumen Asli
+      </a>
+    </div>
+  </div>
+
+  <div class="doc-meta-card">
+    <div class="mc-title">📄 Detail Dokumen</div>
+    <div class="meta-row">
+      <div class="meta-item">
+        <span class="ml">Nama Dokumen</span>
+        <span class="mv">Naskah Akademik GNN</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Penerbit</span>
+        <span class="mv">BSKAP – Kemendikdasmen</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Diterbitkan</span>
+        <span class="mv">Januari 2026</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Jumlah Halaman</span>
+        <span class="mv">118 halaman</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Pengarah Utama</span>
+        <span class="mv">Prof. Dr. Abdul Mu'ti, M.Ed.</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="ml">Dasar Hukum</span>
+        <span class="mv">UUD 1945, UU Sisdiknas, Permendikdasmen No.13/2025</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ EXECUTIVE SUMMARY ══ -->
+<div class="exec-wrap">
+  <div class="exec-box">
+    <h2>✦ Ringkasan Eksekutif</h2>
+    <p>
+      Gerakan Numerasi Nasional (GNN) lahir sebagai respons strategis atas rendahnya capaian numerasi murid Indonesia — baik dalam asesmen nasional (Asesmen Kompetensi Minimum/AKM) maupun internasional (PISA 2022 skor 366, turun dari 379). GNN menempatkan numerasi bukan sekadar kemampuan berhitung, melainkan kecakapan hidup (<em>life skill</em>) yang mencakup berpikir logis, kritis, analitis, kreatif, dan kemampuan menggunakan data dalam pengambilan keputusan sehari-hari.
+    </p>
+    <p>
+      Gerakan ini diimplementasikan melalui <strong>catur matra pendidikan</strong>: sekolah sebagai pusat pembelajaran formal, keluarga sebagai lingkungan pembentuk kebiasaan pertama, masyarakat sebagai ruang penerapan sosial, dan media sebagai penggerak kesadaran publik. Ketiganya diperkuat oleh tiga pilar: <strong>Numeracy Mindset</strong> (pola pikir), <strong>Numeracy Skillset</strong> (keterampilan), dan <strong>Numeracy Toolset</strong> (perangkat dan alat).
+    </p>
+  </div>
+</div>
+
+<!-- ══ TABLE OF CONTENTS ══ -->
+<div class="toc-wrap">
+  <div class="toc-box">
+    <h3>📑 Daftar Isi — 5W 1H</h3>
+    <div class="toc-grid">
+      <a href="#who"   class="toc-item"><div class="toc-num" style="background:#d32f2f">W</div> WHO — Siapa?</a>
+      <a href="#what"  class="toc-item"><div class="toc-num" style="background:#1565c0">W</div> WHAT — Apa?</a>
+      <a href="#where" class="toc-item"><div class="toc-num" style="background:#2e7d32">W</div> WHERE — Di Mana?</a>
+      <a href="#when"  class="toc-item"><div class="toc-num" style="background:#6a1b9a">W</div> WHEN — Kapan?</a>
+      <a href="#why"   class="toc-item"><div class="toc-num" style="background:#e65100">W</div> WHY — Mengapa?</a>
+      <a href="#how"   class="toc-item"><div class="toc-num" style="background:#00838f">H</div> HOW — Bagaimana?</a>
+      <a href="#apply" class="toc-item"><div class="toc-num" style="background:#2e7d32">🏫</div> Aplikasi di Sekolah</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MAIN CONTENT ══ -->
+<div class="main-content">
+
+  <!-- ─── WHO ─── -->
+  <section class="w-section" id="who">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#d32f2f"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#ffebee; font-size:28px;">👥</div>
+        <div>
+          <div class="w-label" style="color:#d32f2f">WHO — Siapa?</div>
+          <div class="w-question">Siapa yang Terlibat dalam Gerakan Numerasi Nasional?</div>
+          <div class="w-sub">Pihak-pihak yang menginisiasi, menggerakkan, dan menjadi sasaran GNN</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Penggagas dan Penggerak Utama</h3>
+        <p>
+          GNN digagas dan digerakkan oleh <strong>Kementerian Pendidikan Dasar dan Menengah (Kemendikdasmen)</strong> Republik Indonesia di bawah kepemimpinan <strong>Prof. Dr. Abdul Mu'ti, M.Ed.</strong> selaku Menteri Pendidikan Dasar dan Menengah. Naskah akademik ini disusun oleh Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP) dengan melibatkan para akademisi dari berbagai universitas terkemuka seperti ITB, Universitas Sarjanawiyata Tamansiswa Yogyakarta, Universitas PGRI Delta Sidoarjo, serta praktisi lapangan dari guru-guru berpengalaman di berbagai daerah Indonesia.
+        </p>
+        <p>
+          Tim ini diperkuat oleh penelaah dari berbagai jenjang pendidikan — mulai TK, SD, SMP, SMA, SMK, hingga SLB dan PKBM — yang tersebar dari Lampung, Tanjungpinang, Kalimantan Timur, NTB, hingga Papua, memastikan GNN menjawab keberagaman kondisi pendidikan di seluruh nusantara.
+        </p>
+
+        <h3>Pemangku Kepentingan: Catur Matra Pendidikan</h3>
+        <p>GNN menetapkan bahwa keberhasilan gerakan ini bergantung pada sinergi empat pihak utama yang disebut <strong>Catur Matra Pendidikan</strong>:</p>
+      </div>
+
+      <div class="stake-grid">
+        <div class="stake-card">
+          <div class="sk-head"><span class="sk-icon">🏫</span><div class="sk-title">Sekolah & Pendidik</div></div>
+          <ul>
+            <li>Guru sebagai ujung tombak pembelajaran numerasi di kelas</li>
+            <li>Kepala sekolah sebagai pemimpin yang memfasilitasi program GNN</li>
+            <li>Pengawas sekolah sebagai pendamping implementasi</li>
+            <li>Seluruh tenaga kependidikan sebagai pendukung ekosistem</li>
+          </ul>
+        </div>
+        <div class="stake-card">
+          <div class="sk-head"><span class="sk-icon">👨‍👩‍👧‍👦</span><div class="sk-title">Keluarga & Orang Tua</div></div>
+          <ul>
+            <li>Orang tua sebagai pendidik pertama dan utama anak</li>
+            <li>Anggota keluarga yang mendampingi belajar di rumah</li>
+            <li>Wali murid yang aktif bermitra dengan sekolah</li>
+            <li>Pembangun kebiasaan bernumerasi di lingkungan rumah tangga</li>
+          </ul>
+        </div>
+        <div class="stake-card">
+          <div class="sk-head"><span class="sk-icon">🏘️</span><div class="sk-title">Masyarakat & Komunitas</div></div>
+          <ul>
+            <li>Komunitas lokal dan organisasi kemasyarakatan</li>
+            <li>Mitra pembangunan (NGO, lembaga filantropi)</li>
+            <li>Perguruan tinggi sebagai mitra riset dan pelatihan</li>
+            <li>Dunia usaha sebagai penyedia konteks numerasi nyata</li>
+          </ul>
+        </div>
+        <div class="stake-card">
+          <div class="sk-head"><span class="sk-icon">📺</span><div class="sk-title">Media & Platform Digital</div></div>
+          <ul>
+            <li>Media massa (TV, radio, cetak) untuk jangkauan luas</li>
+            <li>Media sosial untuk kampanye kesadaran publik</li>
+            <li>Platform edukasi digital dan konten kreator</li>
+            <li>Media sekolah dalam penyebaran konten numerasi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Sasaran Utama GNN</h3>
+        <p>
+          Sasaran utama GNN adalah <strong>murid Indonesia di seluruh jenjang pendidikan</strong> — dari PAUD hingga pendidikan menengah, termasuk pendidikan nonformal. Namun secara lebih luas, GNN juga menyasar orang dewasa, orang tua, guru, dan masyarakat umum yang diharapkan menjadi bagian dari ekosistem bernumerasi.
+        </p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Kelompok Sasaran</th><th>Peran dalam GNN</th><th>Fokus Penguatan</th></tr></thead>
+        <tbody>
+          <tr><td>Murid PAUD–SD</td><td>Penerima pembelajaran langsung</td><td>Fondasi pola pikir &amp; keterampilan dasar numerasi</td></tr>
+          <tr><td>Murid SMP–SMA/SMK</td><td>Penerima pembelajaran lanjutan</td><td>Penerapan numerasi dalam konteks sosial &amp; STEM</td></tr>
+          <tr><td>Guru &amp; Kepala Sekolah</td><td>Agen utama perubahan</td><td>Kompetensi pedagogis &amp; kepemimpinan numerasi</td></tr>
+          <tr><td>Orang Tua</td><td>Mitra rumah tangga</td><td>Pembiasaan &amp; pendampingan di rumah</td></tr>
+          <tr><td>Komunitas</td><td>Penguat ekosistem sosial</td><td>Praktik numerasi dalam kehidupan nyata</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── WHAT ─── -->
+  <section class="w-section" id="what">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#1565c0"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#e3f2fd; font-size:28px;">📐</div>
+        <div>
+          <div class="w-label" style="color:#1565c0">WHAT — Apa?</div>
+          <div class="w-question">Apa Itu Gerakan Numerasi Nasional?</div>
+          <div class="w-sub">Definisi, konsep, dan kerangka kerja GNN secara menyeluruh</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Definisi Numerasi</h3>
+        <p>
+          Numerasi bukan sekadar kemampuan berhitung. Dokumen GNN mendefinisikan numerasi sebagai <strong>kecakapan hidup (life skill)</strong> yang mencakup kemampuan untuk:
+        </p>
+      </div>
+
+      <div class="callout">
+        <span class="ci">💡</span>
+        <p><strong>Numerasi</strong> adalah kapasitas untuk menggunakan pengetahuan, keterampilan, dan disposisi matematika secara kontekstual — baik di sekolah, di dunia kerja, maupun dalam kehidupan bermasyarakat — sehingga seseorang dapat memenuhi kebutuhannya sebagai individu maupun sebagai anggota masyarakat. <em>(Goos dkk., 2014)</em></p>
+      </div>
+
+      <div class="tag-row">
+        <span class="tag-pill">Berpikir Logis</span>
+        <span class="tag-pill">Berpikir Kritis</span>
+        <span class="tag-pill">Analitis</span>
+        <span class="tag-pill">Kreatif</span>
+        <span class="tag-pill">Penggunaan Data</span>
+        <span class="tag-pill">Pengambilan Keputusan</span>
+        <span class="tag-pill">Pemecahan Masalah Kontekstual</span>
+      </div>
+
+      <div class="prose">
+        <h3>Apa yang Dimaksud "Gerakan"?</h3>
+        <p>
+          GNN secara tegas dibedakan dari "program teknis" biasa. Dokumen ini menyatakan bahwa GNN adalah <strong>gerakan kultural dan sosial</strong> yang bertujuan mengubah cara pandang bangsa terhadap matematika dan numerasi, menumbuhkan budaya bernalar berbasis data, serta mempersiapkan generasi Indonesia yang adaptif, inovatif, dan berdaya saing.
+        </p>
+        <p>
+          Sebagai gerakan nasional, GNN menumbuhkan <strong>kesadaran kolektif</strong> dan <strong>partisipasi aktif</strong> dari seluruh lapisan masyarakat — bukan hanya guru dan murid di sekolah.
+        </p>
+
+        <h3>Tiga Pilar Utama GNN</h3>
+      </div>
+
+      <div class="tri-grid">
+        <div class="tri-card">
+          <div class="tc-icon">🧠</div>
+          <div class="tc-head">1. Numeracy Mindset<br/>(Pola Pikir Bernumerasi)</div>
+          <p>Menumbuhkan keyakinan bahwa kemampuan numerasi dapat ditingkatkan melalui usaha dan ketekunan (growth mindset). Mengubah stigma "matematika itu sulit" menjadi kecintaan belajar matematika.</p>
+        </div>
+        <div class="tri-card">
+          <div class="tc-icon">🛠️</div>
+          <div class="tc-head">2. Numeracy Skillset<br/>(Keterampilan Bernumerasi)</div>
+          <p>Meliputi pemahaman konseptual, kemahiran prosedural, kompetensi strategis, penalaran adaptif, dan disposisi produktif — serta kemampuan menerapkannya dalam berbagai konteks kehidupan nyata.</p>
+        </div>
+        <div class="tri-card">
+          <div class="tc-icon">🔧</div>
+          <div class="tc-head">3. Numeracy Toolset<br/>(Alat Bernumerasi)</div>
+          <p>Sumber daya, teknik, dan alat bantu (digital maupun non-digital) yang mendukung pembelajaran numerasi lebih efektif, efisien, menarik, dan mudah diakses oleh semua kalangan.</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Lima Komponen Kecakapan Bermatematika</h3>
+        <p>GNN dibangun di atas fondasi kecakapan bermatematika (Kilpatrick et al., 2001) yang terdiri dari lima komponen saling terkait:</p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Komponen</th><th>Penjelasan</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Pemahaman Konseptual</strong></td><td>Memahami konsep matematika secara mendalam — "tahu mengapa, bukan hanya bagaimana"</td></tr>
+          <tr><td><strong>Kemahiran Prosedural</strong></td><td>Menggunakan prosedur matematis secara akurat, efisien, dan fleksibel</td></tr>
+          <tr><td><strong>Kompetensi Strategis</strong></td><td>Memilih dan menggunakan strategi tepat untuk merepresentasikan &amp; menyelesaikan masalah</td></tr>
+          <tr><td><strong>Penalaran Adaptif</strong></td><td>Berpikir logis, merefleksi, berargumentasi, dan memjustifikasi solusi</td></tr>
+          <tr><td><strong>Disposisi Produktif</strong></td><td>Memandang matematika sebagai ilmu yang masuk akal, berguna, dan layak dipelajari</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── WHERE ─── -->
+  <section class="w-section" id="where">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#2e7d32"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#e8f5e9; font-size:28px;">🗺️</div>
+        <div>
+          <div class="w-label" style="color:#2e7d32">WHERE — Di Mana?</div>
+          <div class="w-question">Di Mana GNN Dilaksanakan dan Berlaku?</div>
+          <div class="w-sub">Jangkauan, ruang implementasi, dan ekosistem gerakan</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Jangkauan Nasional</h3>
+        <p>
+          GNN dirancang sebagai gerakan yang berlaku di <strong>seluruh wilayah Indonesia</strong>, dari Sabang sampai Merauke, mulai dari kota besar hingga daerah 3T (Terdepan, Terluar, Tertinggal). Dokumen ini secara khusus menekankan inklusivitas — bahwa kesenjangan numerasi antarwilayah menjadi salah satu tantangan terbesar yang harus diatasi.
+        </p>
+        <p>
+          Data PISA dan Asesmen Nasional menunjukkan bahwa murid di daerah perkotaan dan Pulau Jawa memiliki capaian numerasi jauh lebih tinggi dibandingkan murid di daerah terpencil. GNN hadir untuk menjembatani kesenjangan ini.
+        </p>
+
+        <h3>Empat Ruang Utama Implementasi</h3>
+      </div>
+
+      <div class="pillar-grid">
+        <div class="pillar">
+          <div class="pl-icon">🏫</div>
+          <div class="pl-head">1. Sekolah / Satuan Pendidikan</div>
+          <p>Pusat pembelajaran terstruktur dan sistematis. Meliputi seluruh jenjang dari PAUD, SD, SMP, SMA/SMK, hingga pendidikan nonformal (PKBM, SLB). Sekolah menjadi simpul koordinasi antara guru, murid, dan orang tua.</p>
+        </div>
+        <div class="pillar">
+          <div class="pl-icon">🏠</div>
+          <div class="pl-head">2. Rumah & Keluarga</div>
+          <p>Lingkungan pertama dan terdekat murid. Kebiasaan bernumerasi dibangun melalui aktivitas sehari-hari: menghitung belanja, mengukur bahan masakan, membaca jam, mengatur keuangan, hingga bermain permainan matematika bersama.</p>
+        </div>
+        <div class="pillar">
+          <div class="pl-icon">🌳</div>
+          <div class="pl-head">3. Masyarakat & Ruang Publik</div>
+          <p>Termasuk perpustakaan, Taman Numerasi, pasar tradisional, organisasi kemasyarakatan, dan kegiatan sosial. Numerasi diperkuat melalui pengalaman nyata dalam kehidupan sosial, ekonomi, dan budaya masyarakat.</p>
+        </div>
+        <div class="pillar">
+          <div class="pl-icon">📡</div>
+          <div class="pl-head">4. Media & Platform Digital</div>
+          <p>Mencakup media massa, media sosial, aplikasi edukasi, video interaktif, dan berbagai kanal digital. Media berfungsi memperluas jangkauan, menyajikan narasi positif tentang numerasi, dan menghubungkan seluruh catur matra.</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Lintas Kementerian dan Lembaga</h3>
+        <p>
+          GNN tidak hanya berlangsung di bawah naungan Kemendikdasmen, tetapi juga melibatkan kolaborasi lintas kementerian dan lembaga:
+        </p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Kementerian/Lembaga</th><th>Peran dalam GNN</th></tr></thead>
+        <tbody>
+          <tr><td>Kemendikdasmen</td><td>Koordinator utama, penetap standar dan panduan nasional</td></tr>
+          <tr><td>Kemendagri</td><td>Mendorong pemerintah daerah mengalokasikan anggaran berbasis numerasi</td></tr>
+          <tr><td>Kemenag</td><td>Memperkuat numerasi di madrasah dan pesantren</td></tr>
+          <tr><td>Kemensos</td><td>Penguatan numerasi masyarakat melalui PKBM dan program pemberdayaan keluarga</td></tr>
+          <tr><td>Pemda Provinsi &amp; Kab/Kota</td><td>Regulasi teknis, alokasi anggaran, pelaksanaan GNN di daerah</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── WHEN ─── -->
+  <section class="w-section" id="when">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#6a1b9a"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#f3e5f5; font-size:28px;">⏰</div>
+        <div>
+          <div class="w-label" style="color:#6a1b9a">WHEN — Kapan?</div>
+          <div class="w-question">Kapan GNN Diluncurkan dan Bagaimana Tahapannya?</div>
+          <div class="w-sub">Linimasa, regulasi pendukung, dan target pencapaian GNN</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Landasan Waktu dan Regulasi</h3>
+        <p>
+          Naskah Akademik GNN diterbitkan pada <strong>Januari 2026</strong> oleh Kemendikdasmen sebagai landasan formal gerakan. Namun, akar regulasinya jauh lebih dalam — dimulai dari mandat konstitusional UUD 1945, diperkuat oleh serangkaian peraturan modern yang saling menopang.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="st">UUD 1945 (Alinea IV &amp; Pasal 31)</div>
+            <p>Mandat konstitusional untuk mencerdaskan kehidupan bangsa. Numerasi sebagai kompetensi dasar wajib bagi seluruh warga negara.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="st">UU No. 20/2003 tentang Sisdiknas</div>
+            <p>Numerasi sebagai kompetensi esensial yang harus dikuasai melalui sistem pendidikan nasional yang bermutu.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="st">Permendikdasmen No. 10, 12, dan 13 Tahun 2025</div>
+            <p>SKL, Standar Isi, dan Kurikulum PAUD–Menengah yang memperkuat numerasi sebagai kompetensi wajib lintas jenjang dengan fleksibilitas pembelajaran.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="st">Keputusan Menteri No. 97/P/2025</div>
+            <p>Pembentukan Tim Gerakan Numerasi Nasional yang bertugas mengoordinasikan pelaksanaan GNN secara nasional dan daerah.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="st">Januari 2026 — Naskah Akademik GNN Diterbitkan</div>
+            <p>Dokumen resmi yang menjadi panduan konseptual, filosofis, dan operasional bagi seluruh pemangku kepentingan dalam melaksanakan GNN.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <div class="st">2025–2045 — Visi Jangka Panjang</div>
+            <p>GNN sejalan dengan RPJPN 2025–2045 dan visi Indonesia Emas 2045, serta target SDGs 2030 tentang kemampuan literasi dan numerasi seluruh remaja Indonesia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Target Perubahan Berdasarkan Rentang Waktu</h3>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Rentang Waktu</th><th>Jenis Perubahan</th><th>Indikator Keberhasilan</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Jangka Pendek (Output)</strong></td><td>Partisipasi organik catur matra</td><td>Sekolah, keluarga, masyarakat, dan media aktif berperan dalam GNN</td></tr>
+          <tr><td><strong>Jangka Menengah (Outcome)</strong></td><td>Penguatan mindset, skillset &amp; toolset</td><td>Murid, guru, dan orang tua memiliki pola pikir, keterampilan, dan perangkat numerasi yang lebih baik</td></tr>
+          <tr><td><strong>Jangka Panjang (Impact)</strong></td><td>Peningkatan capaian numerasi</td><td>Skor AKM, PISA, dan TIMSS Indonesia meningkat signifikan; budaya bernumerasi tumbuh di masyarakat</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── WHY ─── -->
+  <section class="w-section" id="why">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#e65100"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#fff3e0; font-size:28px;">❓</div>
+        <div>
+          <div class="w-label" style="color:#e65100">WHY — Mengapa?</div>
+          <div class="w-question">Mengapa Gerakan Numerasi Nasional Sangat Mendesak?</div>
+          <div class="w-sub">Urgensi, data empiris, dan dampak rendahnya numerasi bagi Indonesia</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Data yang Mengkhawatirkan</h3>
+        <p>
+          GNN lahir dari keprihatinan mendalam atas data-data yang menunjukkan rendahnya kemampuan numerasi murid dan masyarakat Indonesia dalam berbagai asesmen:
+        </p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Sumber Data</th><th>Temuan</th></tr></thead>
+        <tbody>
+          <tr><td>PISA 2022 (OECD)</td><td>Skor literasi matematika Indonesia turun dari 379 → <strong>366</strong>; berada di posisi bawah negara-negara OECD</td></tr>
+          <tr><td>TIMSS 2015</td><td>Skor kemampuan matematika dan sains murid Indonesia hanya <strong>397</strong> (di bawah rata-rata internasional 500)</td></tr>
+          <tr><td>PIAAC-OECD (Jakarta, 2015)</td><td><strong>60%</strong> orang dewasa usia 16–65 di Jakarta berada di bawah Level 1 numerasi</td></tr>
+          <tr><td>Rapor Pendidikan 2022–2024</td><td>Rata-rata skor numerasi murid di semua jenjang hanya <strong>40%–70%</strong> (kategori sedang); belum ada peningkatan signifikan</td></tr>
+          <tr><td>Studi Guru (2023)</td><td>Survei di Sumut, Jateng, Kaltim: guru masih berpandangan sempit tentang numerasi, dominan drilling soal tanpa konteks nyata</td></tr>
+        </tbody>
+      </table>
+
+      <div class="prose">
+        <h3>Lima Dampak Besar Rendahnya Numerasi</h3>
+      </div>
+
+      <div class="impact-list">
+        <div class="impact-item">
+          <div class="imp-num">1</div>
+          <div class="imp-txt">
+            <div class="it">Dampak terhadap Pendidikan &amp; Regenerasi</div>
+            <p>Guru dengan numerasi rendah cenderung mengajar dengan metode drilling tanpa konteks. Orang tua dengan numerasi rendah tidak mampu mendampingi anak belajar matematika, menciptakan siklus kemiskinan numerasi antargenerasi (<em>intergenerational cycle of low numeracy</em>).</p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="imp-num">2</div>
+          <div class="imp-txt">
+            <div class="it">Dampak terhadap Kesehatan &amp; Kesejahteraan</div>
+            <p>Individu dengan numerasi rendah cenderung salah memahami dosis obat, label nutrisi, dan informasi risiko penyakit. Studi longitudinal menunjukkan mereka dua kali lebih mungkin mengalami penyakit kronis (Bynner &amp; Parsons, 2006).</p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="imp-num">3</div>
+          <div class="imp-txt">
+            <div class="it">Dampak terhadap Keputusan Finansial</div>
+            <p>Numerasi rendah membuat seseorang rentan terhadap pinjaman berbunga tinggi, penipuan finansial, dan ketidakmampuan mengelola pendapatan. Dalam era ekonomi digital, dampaknya semakin besar bagi masyarakat berpenghasilan rendah.</p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="imp-num">4</div>
+          <div class="imp-txt">
+            <div class="it">Dampak terhadap Kesempatan Kerja</div>
+            <p>Individu dengan numerasi dasar memiliki kemungkinan dua kali lipat lebih besar untuk menganggur. Peningkatan numerasi terbukti meningkatkan pendapatan individu hingga 20% dalam jangka panjang (Hanushek &amp; Woessmann, 2015).</p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="imp-num">5</div>
+          <div class="imp-txt">
+            <div class="it">Dampak terhadap Daya Saing Nasional</div>
+            <p>Kenaikan 1 poin skor numerasi rata-rata berkontribusi signifikan terhadap peningkatan PDB per kapita jangka panjang. Investasi pada numerasi adalah strategi ekonomi nasional, bukan sekadar kegiatan pedagogis.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Landasan Filosofis: Lebih dari Sekadar Berhitung</h3>
+        <p>
+          GNN dilandasi filsafat pembebasan <strong>Ki Hadjar Dewantara</strong>: pendidikan harus memanusiakan manusia dan membebaskan murid dari kebodohan, ketidakmampuan berpikir kritis, dan ketergantungan. Numerasi tidak dipandang sebagai alat teknis semata, tetapi sebagai <strong>sarana pembebasan dan pemberdayaan individu</strong>.
+        </p>
+      </div>
+
+      <div class="quote-block">
+        <p>Numerasi merupakan cara berpikir yang memungkinkan murid untuk memahami, menafsirkan, dan mengelola realitas secara rasional dan bertanggung jawab. Gerakan ini bukan hanya untuk memperbaiki nilai ujian, tetapi untuk mencerdaskan kehidupan bangsa.</p>
+        <cite>— Naskah Akademik GNN, Kemendikdasmen 2026</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW ─── -->
+  <section class="w-section" id="how">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#00838f"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#e0f7fa; font-size:28px;">⚙️</div>
+        <div>
+          <div class="w-label" style="color:#00838f">HOW — Bagaimana?</div>
+          <div class="w-question">Bagaimana GNN Diimplementasikan?</div>
+          <div class="w-sub">Strategi, arah kebijakan, tujuh prinsip, dan mekanisme pelaksanaan GNN</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="prose">
+        <h3>Tiga Poros Kebijakan Utama</h3>
+        <p>GNN diimplementasikan melalui tiga poros kebijakan yang saling menopang:</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:linear-gradient(135deg,#00838f,#00bcd4);">1</div>
+          <div class="step-content">
+            <div class="st">Penguatan Kebijakan Nasional &amp; Daerah</div>
+            <p>Pemerintah pusat menetapkan standar dan panduan nasional numerasi. Pemerintah daerah mengadaptasi konteks lokal melalui perda, surat edaran, pembentukan Taman Numerasi, dan Festival Numerasi. Sinergi pusat-daerah memastikan GNN hadir nyata di ruang publik.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:linear-gradient(135deg,#00838f,#00bcd4);">2</div>
+          <div class="step-content">
+            <div class="st">Penguatan Kapasitas Sumber Daya Manusia</div>
+            <p>Pelatihan dan pendampingan berkelanjutan bagi guru, kepala sekolah, dan pengawas. Melibatkan orang tua dan komunitas sebagai mitra aktif. Membangun pool of trainers berkualitas tinggi yang dapat melatih guru di seluruh daerah.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:linear-gradient(135deg,#00838f,#00bcd4);">3</div>
+          <div class="step-content">
+            <div class="st">Pembangunan Ekosistem Numerasi Kolaboratif</div>
+            <p>Menggerakkan catur matra pendidikan (sekolah, keluarga, masyarakat, media) sebagai satu kesatuan yang saling menguatkan. Mengintegrasikan lintas kementerian dan lembaga, memperkuat kolaborasi dengan perguruan tinggi dan mitra pembangunan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Tujuh Prinsip Gerakan Numerasi Nasional</h3>
+      </div>
+
+      <div class="principle-list">
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#d32f2f"></div>
+          <div class="pr-name">1. Inklusivitas &amp; Kesetaraan Akses</div>
+          <div class="pr-desc">Setiap warga negara — tanpa memandang gender, status sosial, kondisi geografis, atau keterbatasan fisik — memiliki hak yang sama untuk mengembangkan kecakapan numerasi.</div>
+        </div>
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#1565c0"></div>
+          <div class="pr-name">2. Orientasi Berpikir Kritis</div>
+          <div class="pr-desc">GNN mendorong pengembangan keterampilan bernalar, menganalisis data, menafsirkan informasi kuantitatif, dan membuat keputusan berbasis data — bukan sekadar menghitung.</div>
+        </div>
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#2e7d32"></div>
+          <div class="pr-name">3. Kontekstualitas &amp; Relevansi</div>
+          <div class="pr-desc">Numerasi diajarkan melalui konteks kehidupan nyata murid: pengelolaan keuangan, kesehatan, teknologi, dan isu sosial — menjadikan numerasi sebagai keterampilan hidup yang fungsional.</div>
+        </div>
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#6a1b9a"></div>
+          <div class="pr-name">4. Berbasis Bukti &amp; Data</div>
+          <div class="pr-desc">Seluruh program dan intervensi GNN bertumpu pada hasil riset, temuan empiris, dan asesmen terstandar (PISA, AKM) — memastikan kebijakan tepat sasaran dan akuntabel.</div>
+        </div>
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#e65100"></div>
+          <div class="pr-name">5. Kolaboratif &amp; Partisipatif</div>
+          <div class="pr-desc">Gerakan ini adalah tanggung jawab kolektif — sekolah, keluarga, masyarakat, dan media harus bersinergi sebagai satu ekosistem yang hidup dan saling menguatkan.</div>
+        </div>
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#00838f"></div>
+          <div class="pr-name">6. Keterpaduan &amp; Berkesinambungan</div>
+          <div class="pr-desc">Numerasi terintegrasi dalam seluruh aspek pembelajaran (intrakurikuler, kokurikuler, ekstrakurikuler) sejak PAUD hingga pendidikan tinggi dan pembelajaran sepanjang hayat.</div>
+        </div>
+        <div class="principle-item">
+          <div class="pr-dot" style="background:#b8860b"></div>
+          <div class="pr-name">7. Adaptif terhadap Teknologi &amp; Tantangan Global</div>
+          <div class="pr-desc">GNN harus terus berkembang seiring big data, kecerdasan artifisial, dan disrupsi teknologi — membekali murid dengan kemampuan menafsirkan data dan menggunakan perangkat digital.</div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Tujuh Tujuan Khusus GNN</h3>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>#</th><th>Tujuan Khusus</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Membangun kesadaran pentingnya numerasi sebagai kemampuan dasar dalam memecahkan masalah dan pengambilan keputusan berbasis data</td></tr>
+          <tr><td>2</td><td>Meningkatkan kemampuan pendidik, orang tua, dan penggerak komunitas dalam mengembangkan growth mindset murid terkait numerasi</td></tr>
+          <tr><td>3</td><td>Meningkatkan kemampuan pendidik, orang tua, dan penggerak komunitas dalam strategi pembelajaran numerasi</td></tr>
+          <tr><td>4</td><td>Membangun kapasitas kepala sekolah dalam memfasilitasi program numerasi di sekolah</td></tr>
+          <tr><td>5</td><td>Menyediakan sumber referensi dan ide bagi keluarga, pendidik, dan komunitas yang peduli pembelajaran numerasi</td></tr>
+          <tr><td>6</td><td>Melibatkan berbagai mitra pembangunan dalam program numerasi nasional</td></tr>
+          <tr><td>7</td><td>Mengkurasi berbagai praktik baik dan sistem pembelajaran efektif untuk memperkuat numeracy mindset, skillset, dan toolset</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── APLIKASI DI SEKOLAH ─── -->
+  <section class="w-section" id="apply">
+    <div class="w-header">
+      <div class="w-accent-bar" style="background:#2e7d32"></div>
+      <div class="w-title-area">
+        <div class="w-icon" style="background:#e8f5e9; font-size:28px;">🏫</div>
+        <div>
+          <div class="w-label" style="color:#2e7d32">APLIKASI SEKOLAH</div>
+          <div class="w-question">Implementasi GNN di SD Muhammadiyah 01 Kukusan</div>
+          <div class="w-sub">Langkah konkret yang dapat dilakukan oleh sekolah, guru, dan orang tua</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-body">
+      <div class="app-box">
+        <h3>🎯 Rencana Aksi Nyata untuk SD Muhammadiyah 01 Kukusan</h3>
+        <div class="app-grid">
+          <div class="app-item">
+            <div class="ai-head">📚 Di Kelas (Guru)</div>
+            <p>Rancang pembelajaran matematika berbasis konteks nyata (belanja, pengukuran, data cuaca). Gunakan pendekatan problem-based learning dan proyek numerasi lintas mata pelajaran.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">🏆 Budaya Sekolah</div>
+            <p>Adakan Festival Numerasi, pojok matematika di mading sekolah, kuis numerasi mingguan, dan program "Matematika Itu Asyik" dalam kegiatan kokurikuler.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">👨‍👩‍👧 Pelibatan Orang Tua</div>
+            <p>Adakan workshop orang tua tentang pembiasaan numerasi di rumah — menghitung belanja, membaca jadwal, hingga permainan kartu dan papan yang melatih berhitung.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">💻 Pemanfaatan Digital</div>
+            <p>Gunakan aplikasi edukasi numerasi (Khan Academy, Duolingo Math, GeoGebra) dan buat konten numerasi di media sosial atau website sekolah untuk menginspirasi wali murid.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">📊 Monitoring &amp; Evaluasi</div>
+            <p>Pantau perkembangan numerasi murid melalui AKM, tes formatif berbasis konteks, dan portofolio pemecahan masalah. Gunakan data untuk memperbaiki program secara berkelanjutan.</p>
+          </div>
+          <div class="app-item">
+            <div class="ai-head">🤝 Kemitraan Komunitas</div>
+            <p>Gandeng Pimpinan Cabang Muhammadiyah, perguruan tinggi terdekat, dan komunitas belajar untuk memperkuat ekosistem numerasi di lingkungan Kukusan dan sekitarnya.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="ci">🌟</span>
+        <p>
+          <strong>Ingat:</strong> GNN bukan hanya tentang matematika di kelas. Ini tentang membangun <em>budaya berpikir berbasis data</em> di seluruh ekosistem sekolah — dari cara guru mengajar, cara murid belajar, cara orang tua mendampingi, hingga cara sekolah berkomunikasi dengan masyarakat. SD Muhammadiyah 01 Kukusan memiliki kesempatan menjadi pelopor gerakan ini di wilayah Kukusan, Depok.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /main-content -->
+
+<!-- ══ BOTTOM NAV ══ -->
+<div class="page-footer">
+  <div class="footer-nav">
+    <a href="../index.html">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+      Kembali ke Beranda
+    </a>
+    <span style="color:#dde0f0">|</span>
+    <a href="#">
+      Standar Proses (Segera)
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 <strong>SD Muhammadiyah 01 Kukusan</strong> · Depok, Jawa Barat</p>
+  <p style="margin-top:4px; font-size:11.5px;">Sumber: Naskah Akademik Gerakan Numerasi Nasional, Kemendikdasmen RI, Januari 2026 &nbsp;|&nbsp; Amanah · Profesional · Berkemajuan</p>
+</footer>
+
+</body>
+</html>
