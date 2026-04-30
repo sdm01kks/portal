@@ -3,173 +3,225 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Program Pemerintah — SD Muhammadiyah 01 Kukusan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <title>Hub Program Pemerintah — SD Muhammadiyah 01 Kukusan</title>
+  <meta name="description" content="Hub direktori semua program dan kebijakan pemerintah yang dikaji oleh SD Muhammadiyah 01 Kukusan."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
+    /* ══════════════════════════════════════
+       ROOT & RESET
+    ══════════════════════════════════════ */
     :root {
-      --navy:   #1a237e;
-      --royal:  #283593;
-      --mid:    #3949ab;
-      --accent: #e8b84b;
-      --gold:   #f5c842;
-      --light:  #e8eaf6;
-      --bg:     #f4f5fb;
-      --white:  #ffffff;
-      --text:   #1c1f3a;
-      --muted:  #5c6394;
-      --border: #dde0f0;
+      --forest:     #1b4332;
+      --forest-mid: #2d6a4f;
+      --forest-lt:  #52b788;
+      --forest-pal: #d8f3dc;
+      --sand:       #f8f4ec;
+      --sand-dark:  #ede8dc;
+      --ink:        #1a1a2e;
+      --ink-mid:    #3d3d5c;
+      --ink-lt:     #6b6b8a;
+      --gold:       #d4a017;
+      --gold-lt:    #fcefc7;
+      --white:      #ffffff;
+      --radius:     14px;
+      --shadow:     0 4px 24px rgba(27,67,50,0.10);
+      --shadow-sm:  0 2px 8px rgba(27,67,50,0.07);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
 
-    /* ── HEADER ── */
-    header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--royal) 55%, var(--mid) 100%);
-      position: relative; overflow: hidden;
+    /* TOPBAR */
+    .topbar {
+      background: var(--forest);
+      color: rgba(255,255,255,0.72);
+      font-size: 12px;
+      padding: 6px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-    header::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(232,184,75,.18) 0%, transparent 55%),
-        radial-gradient(circle at 10% 80%, rgba(255,255,255,.07) 0%, transparent 45%);
-    }
-    header::after {
-      content: '';
-      position: absolute; right: -60px; bottom: -60px;
-      width: 260px; height: 260px;
-      border-radius: 50%;
-      border: 40px solid rgba(232,184,75,.1);
-    }
+    .topbar a { color: var(--forest-lt); font-weight: 500; }
+    .topbar a:hover { text-decoration: underline; }
+    .topbar-sep { opacity: 0.3; }
 
-    .header-inner {
-      position: relative;
-      max-width: 1100px; margin: 0 auto;
-      padding: 34px 32px 30px;
-      display: flex; align-items: center; gap: 24px;
-    }
-
-    .logo-wrap {
-      flex-shrink: 0;
-      width: 84px; height: 84px;
-      background: #ffffff;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      border: 3px solid rgba(232,184,75,.7);
-      padding: 10px;
-      box-shadow: 0 0 0 4px rgba(255,255,255,.15), 0 4px 20px rgba(0,0,0,.25);
-    }
-    .logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
-
-    .hdr-text .school-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
-    }
-    .hdr-text .school-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-      color: var(--white); font-weight: 900; line-height: 1.2;
-    }
-    .hdr-text .school-sub { font-size: 12.5px; color: rgba(255,255,255,.65); margin-top: 5px; }
-
-    /* ── NAV ── */
-    .nav-strip { background: rgba(0,0,0,.18); border-top: 1px solid rgba(255,255,255,.1); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; display: flex; }
-    .nav-inner a {
-      padding: 13px 18px; font-size: 12.5px; font-weight: 600;
-      color: rgba(255,255,255,.7); text-decoration: none; letter-spacing: .4px;
-      border-bottom: 3px solid transparent;
-      transition: color .2s, border-color .2s;
-    }
-    .nav-inner a:hover { color: var(--gold); border-bottom-color: var(--gold); }
-    .nav-inner a.active { color: var(--gold); border-bottom-color: var(--gold); }
-
-    /* ── BREADCRUMB ── */
-    .breadcrumb {
-      max-width: 1100px; margin: 0 auto;
-      padding: 18px 32px 0;
-      font-size: 12.5px; color: var(--muted);
-    }
-    .breadcrumb a { color: var(--mid); text-decoration: none; font-weight: 500; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb span { margin: 0 6px; }
-
-    /* ── HERO ── */
+    /* HERO */
     .hero {
-      max-width: 1100px; margin: 0 auto;
-      padding: 36px 32px 16px;
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+      padding: 60px 32px 88px;
     }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 64px;
+      background: var(--sand);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-deco {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+    .hero-deco.d1 { width: 440px; height: 440px; top: -160px; right: -120px; }
+    .hero-deco.d2 { width: 200px; height: 200px; bottom: 10px; left: -60px; }
+    .hero-deco.d4 {
+      width: 500px; height: 500px;
+      right: -80px; top: -80px;
+      background: transparent;
+      border: 60px solid rgba(212,160,23,0.07);
+    }
+
+    .hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
+    .hero-top { display: flex; align-items: center; gap: 22px; margin-bottom: 26px; }
+    .logo-circle {
+      flex-shrink: 0; width: 74px; height: 74px;
+      background: var(--white); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid rgba(212,160,23,0.7); padding: 8px;
+      box-shadow: 0 0 0 5px rgba(255,255,255,0.12), 0 6px 24px rgba(0,0,0,0.25);
+    }
+    .logo-circle img { width: 100%; object-fit: contain; }
+    .hero-school-name {
+      font-family: 'Lora', serif; font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 700; color: rgba(255,255,255,0.92); line-height: 1.3;
+    }
+    .hero-school-sub { font-size: 12px; color: rgba(255,255,255,0.52); margin-top: 3px; }
+
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--light); border: 1px solid #c5caf5;
-      border-radius: 99px; padding: 5px 16px;
-      font-size: 11.5px; font-weight: 700; color: var(--mid);
-      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 18px;
+      background: rgba(82,183,136,0.18); border: 1px solid rgba(82,183,136,0.38);
+      color: var(--forest-lt); font-size: 11px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 20px; margin-bottom: 16px;
     }
-    .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--mid); }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.7rem, 4vw, 2.7rem);
-      color: var(--navy); line-height: 1.18; margin-bottom: 14px;
+    .hero-eyebrow .dot { width: 6px; height: 6px; background: var(--forest-lt); border-radius: 50%; }
+
+    .hero-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px;
     }
-    .hero h1 em { font-style: normal; color: var(--mid); }
-    .hero p {
-      font-size: 15px; line-height: 1.8; color: var(--muted);
-      max-width: 640px; margin-bottom: 0;
+    .hero-title em { font-style: italic; color: var(--forest-lt); }
+    .hero-sub {
+      font-size: 15px; color: rgba(255,255,255,0.65);
+      max-width: 600px; font-weight: 300; line-height: 1.8;
     }
 
-    /* ── PROGRESS BAR ── */
-    .progress-wrap {
-      max-width: 1100px; margin: 0 auto;
-      padding: 28px 32px 0;
+    /* STICKY NAV */
+    .main-nav {
+      background: var(--white); box-shadow: var(--shadow-sm);
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 2px solid var(--forest-pal);
     }
+    .main-nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center;
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .main-nav-inner::-webkit-scrollbar { display: none; }
+    .nav-brand {
+      font-family: 'Lora', serif; font-weight: 700; font-size: 14px;
+      color: var(--forest); white-space: nowrap;
+      padding: 14px 20px 14px 0;
+      border-right: 1.5px solid var(--sand-dark); margin-right: 8px; flex-shrink: 0;
+    }
+    .main-nav a {
+      font-size: 13px; font-weight: 500; color: var(--ink-mid);
+      padding: 14px 14px; white-space: nowrap;
+      border-bottom: 2.5px solid transparent; transition: all 0.18s; flex-shrink: 0;
+    }
+    .main-nav a:hover { color: var(--forest); border-bottom-color: var(--forest-lt); }
+    .main-nav a.active { color: var(--forest); border-bottom-color: var(--forest); font-weight: 600; }
+
+    /* PAGE */
+    .page { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      font-size: 12.5px; color: var(--ink-lt);
+      margin-bottom: 28px; display: flex; align-items: center; gap: 6px;
+    }
+    .breadcrumb a { color: var(--forest-mid); font-weight: 500; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* PROGRESS BOX */
     .progress-box {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 16px; padding: 22px 26px;
-      display: flex; align-items: center; gap: 24px;
+      background: var(--white); border: 1px solid var(--sand-dark);
+      border-radius: var(--radius); padding: 22px 28px;
+      display: flex; align-items: center; gap: 28px;
+      margin-bottom: 40px; box-shadow: var(--shadow-sm);
     }
-    .prog-info { flex: 1; }
-    .prog-info .pi-label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .prog-count {
+      font-family: 'Lora', serif;
+      font-size: 2.6rem; font-weight: 700; color: var(--forest);
+      line-height: 1; flex-shrink: 0; text-align: center;
+    }
+    .prog-count small { display: block; font-size: 1rem; color: var(--ink-lt); font-weight: 400; }
+    .prog-details { flex: 1; }
+    .pi-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.2px; color: var(--ink-lt); margin-bottom: 8px;
+    }
     .prog-bar-track {
-      height: 8px; background: var(--light); border-radius: 99px; overflow: hidden;
-      margin-bottom: 6px;
+      height: 8px; background: var(--sand-dark); border-radius: 99px;
+      overflow: hidden; margin-bottom: 7px;
     }
     .prog-bar-fill {
       height: 100%; border-radius: 99px;
-      background: linear-gradient(90deg, var(--navy), var(--mid));
-      width: 16.7%; /* 1 of 6 */
-      transition: width .6s ease;
+      background: linear-gradient(90deg, var(--forest), var(--forest-lt));
+      width: 71.4%; /* 5 of 7 */
+      transition: width 0.6s ease;
     }
-    .prog-info .pi-text { font-size: 12.5px; color: var(--muted); }
-    .prog-count {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem; font-weight: 900; color: var(--navy); line-height: 1;
-    }
-    .prog-count-sub { font-size: 12px; color: var(--muted); text-align: center; }
+    .pi-text { font-size: 13px; color: var(--ink-lt); line-height: 1.6; }
 
-    /* ── GRID ── */
-    .section-wrap {
-      max-width: 1100px; margin: 0 auto;
-      padding: 32px 32px 64px;
+    /* INFO STRIP */
+    .info-strip {
+      background: var(--forest); border-radius: var(--radius);
+      padding: 24px 28px; display: flex; gap: 18px; align-items: flex-start;
+      margin-bottom: 36px; color: var(--white);
+      position: relative; overflow: hidden;
     }
-    .section-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
-      text-transform: uppercase; color: var(--mid); margin-bottom: 20px;
-      display: flex; align-items: center; gap: 10px;
+    .info-strip::before {
+      content: ''; position: absolute; right: -30px; top: -30px;
+      width: 150px; height: 150px; border-radius: 50%;
+      background: rgba(212,160,23,0.07);
     }
-    .section-label::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
+    .is-icon { font-size: 32px; flex-shrink: 0; position: relative; padding-top: 2px; }
+    .is-content { position: relative; }
+    .is-title {
+      font-family: 'Lora', serif; font-size: 1rem;
+      color: var(--forest-lt); margin-bottom: 6px; font-weight: 700;
+    }
+    .info-strip p { font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; }
+
+    /* SECTION LABEL */
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 1.8px;
+      text-transform: uppercase; color: var(--forest-mid); margin-bottom: 20px;
+    }
+    .section-eyebrow::before {
+      content: ''; display: block; width: 20px; height: 2px;
+      background: var(--forest-lt); flex-shrink: 0;
     }
 
-    /* ── PROGRAM CARD ── */
+    /* PROGRAM CARDS */
     .prog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -177,267 +229,230 @@
     }
 
     .prog-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 2px 14px rgba(26,35,126,.06);
-      display: flex; flex-direction: column;
-      transition: transform .25s, box-shadow .25s;
-      position: relative;
+      background: var(--white); border: 1px solid var(--sand-dark);
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+      transition: transform 0.22s, box-shadow 0.22s; position: relative;
     }
-    .prog-card.active:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 34px rgba(26,35,126,.13);
-    }
+    .prog-card.active:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .prog-card.soon { opacity: 0.72; }
 
-    /* left accent bar */
-    .card-bar {
-      position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
-    }
+    .card-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+    .card-inner { padding: 22px 22px 20px 28px; flex: 1; display: flex; flex-direction: column; }
 
-    .card-inner { padding: 24px 24px 24px 30px; flex: 1; display: flex; flex-direction: column; }
-
-    .card-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
-    .card-icon {
-      width: 48px; height: 48px; border-radius: 13px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; flex-shrink: 0;
-    }
-    .card-meta { flex: 1; }
     .card-num {
-      font-size: 10.5px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 3px;
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--ink-lt); margin-bottom: 10px;
+    }
+    .card-top { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 12px; }
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
     }
     .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem; color: var(--navy); line-height: 1.25;
+      font-family: 'Lora', serif; font-size: 1.05rem;
+      color: var(--forest); line-height: 1.3; font-weight: 700;
     }
 
     .card-source {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 11px; font-weight: 600; color: var(--muted);
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 99px; padding: 3px 11px; margin-bottom: 10px;
-      width: fit-content;
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 500; color: var(--ink-lt);
+      background: var(--sand); border: 1px solid var(--sand-dark);
+      border-radius: 99px; padding: 3px 11px; margin-bottom: 10px; width: fit-content;
     }
 
-    .card-desc {
-      font-size: 13.5px; line-height: 1.7; color: #4a4d70;
-      flex: 1; margin-bottom: 18px;
-    }
+    .card-desc { font-size: 13.5px; line-height: 1.7; color: var(--ink-mid); flex: 1; margin-bottom: 14px; }
 
-    /* tags */
-    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 0; }
     .ctag {
-      font-size: 11px; font-weight: 600;
-      padding: 3px 10px; border-radius: 99px;
-      background: var(--light); color: var(--mid); border: 1px solid #c5caf5;
+      font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 99px;
+      background: var(--forest-pal); color: var(--forest-mid); border: 1px solid rgba(82,183,136,0.25);
     }
 
-    /* card footer */
-    .card-foot { border-top: 1px solid var(--border); padding: 14px 24px 14px 30px; }
+    .card-foot { border-top: 1px solid var(--sand-dark); padding: 13px 22px 13px 28px; }
     .btn-go {
       display: inline-flex; align-items: center; gap: 7px;
-      padding: 10px 20px; border-radius: 11px;
-      font-size: 13px; font-weight: 700; text-decoration: none;
-      background: linear-gradient(135deg, var(--navy), var(--mid));
-      color: var(--white);
-      transition: opacity .2s, transform .15s;
+      background: var(--forest); color: var(--white);
+      padding: 9px 18px; border-radius: 9px;
+      font-size: 13px; font-weight: 600;
+      transition: background 0.18s, transform 0.15s;
     }
-    .btn-go:hover { opacity: .88; transform: translateX(3px); }
-    .btn-go svg { width: 15px; height: 15px; }
+    .btn-go:hover { background: var(--forest-mid); transform: translateX(2px); }
+    .btn-go svg { width: 14px; height: 14px; }
 
     .soon-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 9px 16px; border-radius: 11px;
-      font-size: 12.5px; font-weight: 600;
-      background: #fff8e1; color: #e65100;
-      border: 1px solid #ffe082;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 9px; font-size: 12.5px; font-weight: 600;
+      background: var(--gold-lt); color: #92610a; border: 1px solid rgba(212,160,23,0.3);
     }
 
-    /* dim coming-soon cards */
-    .prog-card.soon { opacity: .75; }
-    .prog-card.soon:hover { transform: none; }
-
-    /* ── INFO BOX ── */
-    .info-strip {
-      background: linear-gradient(135deg, var(--navy), var(--royal));
-      border-radius: 18px; padding: 28px 32px;
-      display: flex; gap: 20px; align-items: center;
-      margin-bottom: 32px; color: var(--white);
-    }
-    .info-strip .is-icon { font-size: 36px; flex-shrink: 0; }
-    .info-strip .is-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem; color: var(--gold); margin-bottom: 6px;
-    }
-    .info-strip p { font-size: 13.5px; color: rgba(255,255,255,.8); line-height: 1.7; }
-
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
-      background: var(--navy); color: rgba(255,255,255,.55);
-      text-align: center; padding: 24px 32px; font-size: 12.5px;
+      background: var(--forest); color: rgba(255,255,255,0.55);
+      text-align: center; padding: 24px 32px; font-size: 13px;
     }
-    footer strong { color: var(--gold); }
+    footer strong { color: var(--forest-lt); }
 
-    @media (max-width: 640px) {
-      .header-inner { padding: 24px 18px; gap: 16px; }
-      .logo-wrap { width: 66px; height: 66px; }
-      .hero, .section-wrap, .progress-wrap, .breadcrumb { padding-left: 18px; padding-right: 18px; }
-      .nav-inner { overflow-x: auto; padding: 0 14px; }
+    @media (max-width: 720px) {
+      .topbar { padding: 6px 16px; font-size: 11px; }
+      .hero { padding: 44px 18px 76px; }
+      .page { padding: 30px 16px 60px; }
+      .progress-box { flex-direction: column; align-items: flex-start; gap: 14px; }
       .info-strip { flex-direction: column; gap: 12px; }
-      .progress-box { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
-<header>
-  <div class="header-inner">
-    <div class="logo-wrap">
-      <img src="../logo_sekolah_tanpa_background.png" alt="Logo SD Muhammadiyah 01 Kukusan"/>
-    </div>
-    <div class="hdr-text">
-      <div class="school-label">Portal Kebijakan Pendidikan</div>
-      <div class="school-name">SD Muhammadiyah 01 Kukusan</div>
-      <div class="school-sub">Jl. Kukusan Raya · Depok, Jawa Barat &nbsp;|&nbsp; sdm01kks.github.io</div>
-    </div>
-  </div>
-  <nav class="nav-strip">
-    <div class="nav-inner">
-      <a href="../index.html">Beranda</a>
-      <a href="index.html" class="active">Program Pemerintah</a>
-    </div>
-  </nav>
-</header>
-
-<!-- ══ BREADCRUMB ══ -->
-<div class="breadcrumb">
-  <a href="../index.html">Beranda</a>
-  <span>›</span>
-  Program Pemerintah
+<!-- ══ TOPBAR ══ -->
+<div class="topbar">
+  <span>📍 Jl. Kukusan Raya, Depok, Jawa Barat &nbsp;<span class="topbar-sep">|</span>&nbsp; Portal Kebijakan Pendidikan</span>
+  <span><a href="https://sdm01kks.github.io" target="_blank">sdm01kks.github.io</a> &nbsp;<span class="topbar-sep">|</span>&nbsp; © 2026</span>
 </div>
 
 <!-- ══ HERO ══ -->
-<section class="hero">
-  <div class="hero-eyebrow"><span></span>Direktori Kebijakan &amp; Program Pendidikan</div>
-  <h1>Hub <em>Program Pemerintah</em><br/>di SD Muhammadiyah 01 Kukusan</h1>
-  <p>
-    Kumpulan kajian kebijakan dan program pendidikan terkini dari pemerintah yang telah dianalisis,
-    dikontekstualisasikan, dan disajikan secara ringkas untuk mendukung implementasi di lingkungan
-    SD Muhammadiyah 01 Kukusan.
-  </p>
-</section>
-
-<!-- ══ PROGRESS ══ -->
-<div class="progress-wrap">
-  <div class="progress-box">
-    <div class="prog-count">2<br/><span style="font-size:1.2rem;color:var(--muted);">/6</span></div>
-    <div class="prog-count-sub">Program<br/>Tersedia</div>
-    <div class="prog-info" style="flex:1; padding-left:8px;">
-      <div class="pi-label">Progress Dokumentasi</div>
-      <div class="prog-bar-track"><div class="prog-bar-fill" style="width:33.4%"></div></div>
-      <div class="pi-text">2 dari 6 program telah terdokumentasi &amp; tersedia untuk dibaca. Program lainnya sedang dalam proses pengkajian dan akan segera hadir.</div>
+<div class="hero">
+  <div class="hero-deco d1"></div>
+  <div class="hero-deco d2"></div>
+  <div class="hero-deco d4"></div>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="logo-circle">
+        <img src="../logo_sekolah_background_putih.jpeg" alt="Logo SD Muhammadiyah 01 Kukusan"/>
+      </div>
+      <div>
+        <div class="hero-school-name">SD Muhammadiyah 01 Kukusan</div>
+        <div class="hero-school-sub">Depok, Jawa Barat · Amanah · Profesional · Berkemajuan</div>
+      </div>
     </div>
+    <div class="hero-eyebrow"><span class="dot"></span>Direktori Kajian Kebijakan Pendidikan</div>
+    <h1 class="hero-title">Hub <em>Program Pemerintah</em><br/>di SD Muh. 01 Kukusan</h1>
+    <p class="hero-sub">
+      Kumpulan kajian kebijakan dan program pendidikan dari pemerintah yang telah dianalisis,
+      dikontekstualisasikan, dan disajikan secara ringkas untuk mendukung implementasi di sekolah.
+    </p>
   </div>
 </div>
 
-<!-- ══ INFO STRIP ══ -->
-<div class="section-wrap">
-  <div class="info-strip">
-    <div class="is-icon">📌</div>
-    <div>
-      <div class="is-title">Tentang Halaman Ini</div>
-      <p>
-        Halaman ini adalah <strong>hub permanen</strong> untuk semua program dan kebijakan pemerintah yang dikaji oleh SD Muhammadiyah 01 Kukusan.
-        Setiap kali program baru selesai dikaji, tautan baru akan ditambahkan di sini — sementara program lama tetap dapat diakses.
-        Tidak ada informasi yang akan hilang.
+<!-- ══ STICKY NAV ══ -->
+<nav class="main-nav">
+  <div class="main-nav-inner">
+    <div class="nav-brand">SDM01 Kukusan</div>
+    <a href="../index.html">🏠 Beranda</a>
+    <a href="index.html" class="active">📋 Program Pemerintah</a>
+  </div>
+</nav>
+
+<!-- ══ CONTENT ══ -->
+<div class="page">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">Beranda</a>
+    <span>›</span>
+    <span>Program Pemerintah</span>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-box">
+    <div class="prog-count">5<small>dari 7</small></div>
+    <div class="prog-details">
+      <div class="pi-label">Progress Dokumentasi</div>
+      <div class="prog-bar-track"><div class="prog-bar-fill"></div></div>
+      <p class="pi-text">
+        <strong>5 dari 7 program</strong> telah terdokumentasi dan dapat dibaca.
+        Program anti narkoba dan sekolah model sedang dalam proses pengkajian — akan segera hadir.
       </p>
     </div>
   </div>
 
-  <!-- ══ PROGRAM CARDS ══ -->
-  <div class="section-label">6 Program Prioritas</div>
+  <!-- Info strip -->
+  <div class="info-strip">
+    <div class="is-icon">📌</div>
+    <div class="is-content">
+      <div class="is-title">Tentang Halaman Ini</div>
+      <p>
+        Halaman ini adalah <strong>hub permanen</strong> untuk semua program dan kebijakan pemerintah yang dikaji oleh SD Muhammadiyah 01 Kukusan.
+        Setiap program baru yang selesai dikaji akan ditambahkan di sini — tidak ada informasi yang hilang.
+        Kunjungi halaman masing-masing program untuk membaca kajian lengkap beserta aplikasinya di sekolah.
+      </p>
+    </div>
+  </div>
 
+  <!-- Section label -->
+  <div class="section-eyebrow">7 Program Prioritas 2025–2026</div>
+
+  <!-- CARDS -->
   <div class="prog-grid">
 
-    <!-- 1. GNN — ACTIVE -->
+    <!-- 1. GNN -->
     <div class="prog-card active">
-      <div class="card-bar" style="background:linear-gradient(180deg,#1a237e,#3949ab)"></div>
+      <div class="card-bar" style="background:linear-gradient(180deg,#1a237e,#3949ab);"></div>
       <div class="card-inner">
+        <div class="card-num">Program 01</div>
         <div class="card-top">
           <div class="card-icon" style="background:#e8eaf6;">🔢</div>
-          <div class="card-meta">
-            <div class="card-num">Program 01</div>
-            <div class="card-title">Gerakan Numerasi Nasional (GNN)</div>
-          </div>
+          <div class="card-title">Gerakan Numerasi Nasional (GNN)</div>
         </div>
-        <div class="card-source">📄 Naskah Akademik · BSKAP Kemendikdasmen · Januari 2026</div>
-        <div class="card-desc">
-          Strategi nasional untuk meningkatkan kemampuan numerasi murid dan masyarakat Indonesia melalui sinergi catur matra pendidikan: sekolah, keluarga, masyarakat, dan media. Numerasi dipandang sebagai kecakapan hidup, bukan sekadar kemampuan berhitung.
-        </div>
+        <div class="card-source">📄 Naskah Akademik · BSKAP Kemendikdasmen · Jan 2026</div>
+        <p class="card-desc">
+          Strategi nasional untuk meningkatkan kemampuan numerasi murid dan masyarakat melalui sinergi sekolah, keluarga, masyarakat, dan media. Numerasi dipandang sebagai kecakapan hidup esensial di era modern.
+        </p>
         <div class="card-tags">
           <span class="ctag">Numerasi</span>
           <span class="ctag">Matematika</span>
-          <span class="ctag">5W1H</span>
           <span class="ctag">118 hal.</span>
         </div>
       </div>
       <div class="card-foot">
         <a href="gerakan-numerasi-nasional.html" class="btn-go">
-          Baca Kajian Lengkap
+          Baca Kajian
           <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
         </a>
       </div>
     </div>
 
-    <!-- 2. Standar Proses — ACTIVE -->
+    <!-- 2. Standar Proses -->
     <div class="prog-card active">
-      <div class="card-bar" style="background:linear-gradient(180deg,#b8860b,#f5c842)"></div>
+      <div class="card-bar" style="background:linear-gradient(180deg,#b8860b,#d4a017);"></div>
       <div class="card-inner">
+        <div class="card-num">Program 02</div>
         <div class="card-top">
           <div class="card-icon" style="background:#fff8e1;">📋</div>
-          <div class="card-meta">
-            <div class="card-num">Program 02</div>
-            <div class="card-title">Standar Proses Pendidikan 2026</div>
-          </div>
+          <div class="card-title">Standar Proses Pendidikan 2026</div>
         </div>
-        <div class="card-source">📄 Permendikdasmen No. 1 Tahun 2026 · 5 Januari 2026</div>
-        <div class="card-desc">
-          Regulasi terbaru yang menetapkan kriteria minimal proses pembelajaran pada PAUD, Pendidikan Dasar, dan Menengah. Menggantikan Permendikbud No. 16 Tahun 2022 dengan prinsip pembelajaran berkesadaran, bermakna, dan menggembirakan.
-        </div>
+        <div class="card-source">📄 Permendikdasmen No. 1 · 5 Jan 2026</div>
+        <p class="card-desc">
+          Regulasi terbaru yang menetapkan kriteria minimal proses pembelajaran pada PAUD hingga Menengah — menggantikan Permendikbud No.16/2022 dengan prinsip pembelajaran berkesadaran, bermakna, dan menggembirakan.
+        </p>
         <div class="card-tags">
           <span class="ctag">Standar Proses</span>
           <span class="ctag">Permendikdasmen</span>
-          <span class="ctag">5W1H</span>
           <span class="ctag">9 hal.</span>
         </div>
       </div>
       <div class="card-foot">
         <a href="standar-proses.html" class="btn-go">
-          Baca Kajian Lengkap
+          Baca Kajian
           <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
         </a>
       </div>
     </div>
 
-    <!-- 3. Menulis — SOON -->
-    <div class="prog-card soon">
-      <div class="card-bar" style="background:linear-gradient(180deg,#1b5e20,#43a047)"></div>
+    <!-- 3. Menulis — DIPERBAIKI: link aktif -->
+    <div class="prog-card active">
+      <div class="card-bar" style="background:linear-gradient(180deg,#1b5e20,#43a047);"></div>
       <div class="card-inner">
+        <div class="card-num">Program 03</div>
         <div class="card-top">
           <div class="card-icon" style="background:#e8f5e9;">✍️</div>
-          <div class="card-meta">
-            <div class="card-num">Program 03</div>
-            <div class="card-title">Juknis Keterampilan Menulis</div>
-          </div>
+          <div class="card-title">Juknis Keterampilan Menulis</div>
         </div>
         <div class="card-source">📄 Petunjuk Teknis · Kemendikdasmen · 2025</div>
-        <div class="card-desc">
-          Petunjuk teknis pelaksanaan program penguatan keterampilan menulis bagi murid sekolah dasar sebagai bagian dari penguatan literasi nasional yang holistik dan menyenangkan.
-        </div>
+        <p class="card-desc">
+          Petunjuk teknis penguatan keterampilan menulis bagi murid sekolah dasar — bagian dari program penguatan literasi nasional yang berpusat pada proses, bukan hanya produk tulisan.
+        </p>
         <div class="card-tags">
           <span class="ctag">Literasi</span>
           <span class="ctag">Menulis</span>
@@ -445,25 +460,26 @@
         </div>
       </div>
       <div class="card-foot">
-        <span class="soon-badge">🕐 Segera Hadir</span>
+        <a href="juknis-keterampilan-menulis.html" class="btn-go">
+          Baca Kajian
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- 4. Kebencanaan — SOON -->
-    <div class="prog-card soon">
-      <div class="card-bar" style="background:linear-gradient(180deg,#bf360c,#ff7043)"></div>
+    <!-- 4. Kebencanaan — DIPERBAIKI: link aktif -->
+    <div class="prog-card active">
+      <div class="card-bar" style="background:linear-gradient(180deg,#bf360c,#ff7043);"></div>
       <div class="card-inner">
+        <div class="card-num">Program 04</div>
         <div class="card-top">
           <div class="card-icon" style="background:#fbe9e7;">🛡️</div>
-          <div class="card-meta">
-            <div class="card-num">Program 04</div>
-            <div class="card-title">Pendidikan Kebencanaan</div>
-          </div>
+          <div class="card-title">Pendidikan Kebencanaan</div>
         </div>
         <div class="card-source">📄 Kemendikdasmen · BNPB · 2025</div>
-        <div class="card-desc">
-          Panduan integrasi pendidikan pengurangan risiko bencana ke dalam kurikulum sekolah dasar untuk membangun kesiapsiagaan murid dalam menghadapi bencana alam sejak dini.
-        </div>
+        <p class="card-desc">
+          Panduan integrasi pendidikan pengurangan risiko bencana ke dalam kurikulum sekolah dasar — membangun kesiapsiagaan dan ketangguhan murid menghadapi bencana alam sejak dini.
+        </p>
         <div class="card-tags">
           <span class="ctag">Kebencanaan</span>
           <span class="ctag">Mitigasi</span>
@@ -471,25 +487,26 @@
         </div>
       </div>
       <div class="card-foot">
-        <span class="soon-badge">🕐 Segera Hadir</span>
+        <a href="pendidikan-kebencanaan.html" class="btn-go">
+          Baca Kajian
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- 5. Antikorupsi — SOON -->
-    <div class="prog-card soon">
-      <div class="card-bar" style="background:linear-gradient(180deg,#4a148c,#8e24aa)"></div>
+    <!-- 5. Antikorupsi — DIPERBAIKI: link aktif -->
+    <div class="prog-card active">
+      <div class="card-bar" style="background:linear-gradient(180deg,#4a148c,#8e24aa);"></div>
       <div class="card-inner">
+        <div class="card-num">Program 05</div>
         <div class="card-top">
           <div class="card-icon" style="background:#f3e5f5;">⚖️</div>
-          <div class="card-meta">
-            <div class="card-num">Program 05</div>
-            <div class="card-title">Pendidikan Antikorupsi</div>
-          </div>
+          <div class="card-title">Pendidikan Antikorupsi</div>
         </div>
-        <div class="card-source">📄 KPK · Kemendikdasmen · 2025</div>
-        <div class="card-desc">
-          Program penanaman nilai-nilai integritas, kejujuran, dan antikorupsi sejak jenjang sekolah dasar melalui pendekatan pembelajaran yang kontekstual, kreatif, dan berbasis karakter.
-        </div>
+        <div class="card-source">📄 KPK · BSKAP Kemendikdasmen · 2025</div>
+        <p class="card-desc">
+          Program penanaman nilai integritas, kejujuran, dan antikorupsi sejak sekolah dasar — melalui pendekatan pembelajaran yang kontekstual, kreatif, dan terintegrasi lintas mata pelajaran.
+        </p>
         <div class="card-tags">
           <span class="ctag">Antikorupsi</span>
           <span class="ctag">Integritas</span>
@@ -497,25 +514,26 @@
         </div>
       </div>
       <div class="card-foot">
-        <span class="soon-badge">🕐 Segera Hadir</span>
+        <a href="pendidikan-antikorupsi.html" class="btn-go">
+          Baca Kajian
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- 6. Anti Narkoba — SOON -->
+    <!-- 6. Anti Narkoba -->
     <div class="prog-card soon">
-      <div class="card-bar" style="background:linear-gradient(180deg,#006064,#00acc1)"></div>
+      <div class="card-bar" style="background:linear-gradient(180deg,#006064,#00acc1);"></div>
       <div class="card-inner">
+        <div class="card-num">Program 06</div>
         <div class="card-top">
           <div class="card-icon" style="background:#e0f7fa;">🚫</div>
-          <div class="card-meta">
-            <div class="card-num">Program 06</div>
-            <div class="card-title">Integrasi Kurikulum Anti Narkoba</div>
-          </div>
+          <div class="card-title">Integrasi Kurikulum Anti Narkoba</div>
         </div>
         <div class="card-source">📄 BNN · Kemendikdasmen · 2025</div>
-        <div class="card-desc">
-          Panduan mengintegrasikan materi pencegahan penyalahgunaan narkoba ke dalam mata pelajaran yang relevan di sekolah dasar secara holistik, kontekstual, dan sesuai usia murid.
-        </div>
+        <p class="card-desc">
+          Panduan mengintegrasikan materi pencegahan penyalahgunaan narkoba ke dalam mata pelajaran relevan di SD secara holistik, kontekstual, dan sesuai perkembangan usia murid.
+        </p>
         <div class="card-tags">
           <span class="ctag">Anti Narkoba</span>
           <span class="ctag">Pencegahan</span>
@@ -527,8 +545,33 @@
       </div>
     </div>
 
+    <!-- 7. Sekolah Model — BARU -->
+    <div class="prog-card soon">
+      <div class="card-bar" style="background:linear-gradient(180deg,#0d47a1,#1976d2);"></div>
+      <div class="card-inner">
+        <div class="card-num">Program 07 — Baru</div>
+        <div class="card-top">
+          <div class="card-icon" style="background:#e3f2fd;">🤖</div>
+          <div class="card-title">Sekolah Model: Pembelajaran Mendalam &amp; Koding–KA</div>
+        </div>
+        <div class="card-source">📄 Kemendikdasmen · 2025–2026</div>
+        <p class="card-desc">
+          Penyelenggaraan Sekolah Model Implementasi Pembelajaran Mendalam dan Koding dan Kecerdasan Artifisial — panduan untuk sekolah yang ditetapkan sebagai model penerapan pembelajaran mendalam berbasis teknologi di Indonesia.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Koding</span>
+          <span class="ctag">Kecerdasan Artifisial</span>
+          <span class="ctag">Pembelajaran Mendalam</span>
+          <span class="ctag">Sekolah Model</span>
+        </div>
+      </div>
+      <div class="card-foot">
+        <span class="soon-badge">🕐 Segera Hadir</span>
+      </div>
+    </div>
+
   </div><!-- /prog-grid -->
-</div><!-- /section-wrap -->
+</div><!-- /page -->
 
 <footer>
   <p>&copy; 2026 <strong>SD Muhammadiyah 01 Kukusan</strong> · Depok, Jawa Barat</p>
