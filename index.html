@@ -3,571 +3,795 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portal Pendidikan — SD Muhammadiyah 01 Kukusan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <title>Portal Program Pemerintah — SD Muhammadiyah 01 Kukusan</title>
+  <meta name="description" content="Portal kebijakan dan program pemerintah yang dikaji dan dikontekstualisasikan untuk SD Muhammadiyah 01 Kukusan, Depok."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
+    /* ══════════════════════════════════════
+       ROOT & RESET
+    ══════════════════════════════════════ */
     :root {
-      --navy:   #1a237e;
-      --royal:  #283593;
-      --mid:    #3949ab;
-      --accent: #e8b84b;
-      --gold:   #f5c842;
-      --light:  #e8eaf6;
-      --white:  #ffffff;
-      --text:   #1c1f3a;
-      --muted:  #5c6394;
+      --forest:     #1b4332;
+      --forest-mid: #2d6a4f;
+      --forest-lt:  #52b788;
+      --forest-pal: #d8f3dc;
+      --sand:       #f8f4ec;
+      --sand-dark:  #ede8dc;
+      --ink:        #1a1a2e;
+      --ink-mid:    #3d3d5c;
+      --ink-lt:     #6b6b8a;
+      --gold:       #d4a017;
+      --gold-lt:    #fcefc7;
+      --white:      #ffffff;
+      --radius:     14px;
+      --shadow:     0 4px 24px rgba(27,67,50,0.10);
+      --shadow-sm:  0 2px 8px rgba(27,67,50,0.07);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #f4f5fb;
-      color: var(--text);
-      min-height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
 
-    /* ── HEADER ── */
-    header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--royal) 55%, var(--mid) 100%);
-      padding: 0;
+    /* ══════════════════════════════════════
+       TOPBAR
+    ══════════════════════════════════════ */
+    .topbar {
+      background: var(--forest);
+      color: rgba(255,255,255,0.72);
+      font-size: 12px;
+      padding: 6px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      letter-spacing: 0.3px;
+    }
+    .topbar a { color: var(--forest-lt); font-weight: 500; }
+    .topbar a:hover { text-decoration: underline; }
+    .topbar-left { display: flex; align-items: center; gap: 20px; }
+    .topbar-sep { opacity: 0.3; }
+
+    /* ══════════════════════════════════════
+       HERO / HEADER
+    ══════════════════════════════════════ */
+    .hero {
+      background: var(--forest);
       position: relative;
       overflow: hidden;
+      padding: 60px 32px 88px;
     }
-    header::before {
+    .hero::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(232,184,75,.18) 0%, transparent 55%),
-        radial-gradient(circle at 10% 80%, rgba(255,255,255,.07) 0%, transparent 45%);
+      bottom: -2px; left: 0; right: 0;
+      height: 64px;
+      background: var(--sand);
+      clip-path: ellipse(55% 100% at 50% 100%);
     }
-    /* decorative corner arcs */
-    header::after {
-      content: '';
+    .hero-deco {
       position: absolute;
-      right: -60px; bottom: -60px;
-      width: 260px; height: 260px;
       border-radius: 50%;
-      border: 40px solid rgba(232,184,75,.12);
+      background: rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+    .hero-deco.d1 { width: 440px; height: 440px; top: -160px; right: -120px; }
+    .hero-deco.d2 { width: 200px; height: 200px; bottom: 10px; left: -60px; }
+    .hero-deco.d3 { width: 80px; height: 80px; top: 50px; left: 220px; background: rgba(255,255,255,0.08); }
+    .hero-deco.d4 {
+      width: 500px; height: 500px;
+      right: -80px; top: -80px;
+      background: transparent;
+      border: 60px solid rgba(212,160,23,0.08);
     }
 
-    .header-inner {
+    .hero-inner {
       position: relative;
-      max-width: 1100px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 38px 32px 34px;
+    }
+    .hero-top {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 24px;
+      margin-bottom: 28px;
     }
-
-    .logo-wrap {
+    .logo-circle {
       flex-shrink: 0;
-      width: 88px; height: 88px;
-      background: #ffffff;
+      width: 80px; height: 80px;
+      background: var(--white);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      border: 3px solid rgba(232,184,75,.7);
-      padding: 10px;
-      box-shadow: 0 0 0 4px rgba(255,255,255,.15), 0 4px 20px rgba(0,0,0,.25);
+      border: 3px solid rgba(212,160,23,0.7);
+      padding: 9px;
+      box-shadow: 0 0 0 5px rgba(255,255,255,0.12), 0 8px 28px rgba(0,0,0,0.25);
     }
-    .logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .logo-circle img { width: 100%; object-fit: contain; }
 
-    .header-text { flex: 1; }
-    .school-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 6px;
+    .hero-school-name {
+      font-family: 'Lora', serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.3;
     }
-    .school-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.35rem, 3vw, 2rem);
-      color: var(--white);
-      line-height: 1.2;
-      font-weight: 900;
-    }
-    .school-sub {
-      margin-top: 8px;
-      font-size: 13px;
-      color: rgba(255,255,255,.72);
-      font-weight: 400;
+    .hero-school-sub {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 3px;
     }
 
-    /* ── NAV STRIP ── */
-    .nav-strip {
-      background: rgba(255,255,255,.08);
-      border-top: 1px solid rgba(255,255,255,.12);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 32px;
-      display: flex;
-      gap: 0;
-    }
-    .nav-inner a {
-      padding: 14px 20px;
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255,255,255,.75);
-      text-decoration: none;
-      letter-spacing: .5px;
-      border-bottom: 3px solid transparent;
-      transition: color .2s, border-color .2s;
-    }
-    .nav-inner a:hover, .nav-inner a.active {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
-    }
-
-    /* ── HERO SECTION ── */
-    .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 52px 32px 20px;
-    }
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--light);
-      border: 1px solid #c5caf5;
-      border-radius: 99px;
-      padding: 6px 16px;
-      font-size: 12px;
+      background: rgba(82,183,136,0.18);
+      border: 1px solid rgba(82,183,136,0.38);
+      color: var(--forest-lt);
+      font-size: 11.5px;
       font-weight: 600;
-      color: var(--mid);
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-    .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--mid); display: inline-block; }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4.5vw, 3rem);
-      color: var(--navy);
-      line-height: 1.18;
-      max-width: 700px;
+      padding: 5px 16px;
+      border-radius: 20px;
       margin-bottom: 18px;
     }
-    .hero h1 em { font-style: normal; color: var(--mid); }
-    .hero p {
+    .hero-eyebrow .dot { width: 6px; height: 6px; background: var(--forest-lt); border-radius: 50%; flex-shrink: 0; }
+
+    .hero-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-title em { font-style: italic; color: var(--forest-lt); }
+
+    .hero-sub {
       font-size: 15.5px;
-      line-height: 1.75;
-      color: var(--muted);
+      color: rgba(255,255,255,0.68);
       max-width: 620px;
-      margin-bottom: 32px;
+      font-weight: 300;
+      line-height: 1.8;
     }
 
-    /* ── CATEGORY TABS ── */
-    .section-wrap {
+    /* ══════════════════════════════════════
+       STICKY NAV
+    ══════════════════════════════════════ */
+    .main-nav {
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--forest-pal);
+    }
+    .main-nav-inner {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 32px 64px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav-inner::-webkit-scrollbar { display: none; }
+    .nav-brand {
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--forest);
+      white-space: nowrap;
+      padding: 14px 20px 14px 0;
+      border-right: 1.5px solid var(--sand-dark);
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .main-nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-mid);
+      padding: 14px 14px;
+      white-space: nowrap;
+      border-bottom: 2.5px solid transparent;
+      transition: all 0.18s;
+      flex-shrink: 0;
+    }
+    .main-nav a:hover { color: var(--forest); border-bottom-color: var(--forest-lt); }
+    .main-nav a.active { color: var(--forest); border-bottom-color: var(--forest); font-weight: 600; }
+
+    /* ══════════════════════════════════════
+       PAGE CONTENT
+    ══════════════════════════════════════ */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px 80px;
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--sand-dark);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--forest-lt);
+    }
+    .stat-num {
+      font-family: 'Lora', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 12.5px;
+      color: var(--ink-lt);
+      font-weight: 400;
+    }
+
+    /* Section header */
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--forest-mid);
+      margin-bottom: 8px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--forest-lt);
+      flex-shrink: 0;
     }
     .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--navy);
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--forest);
       margin-bottom: 8px;
     }
     .section-desc {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 32px;
+      font-size: 14.5px;
+      color: var(--ink-lt);
+      max-width: 620px;
+      margin-bottom: 36px;
+      font-weight: 300;
     }
 
-    /* ── CARD GRID ── */
+    /* ══════════════════════════════════════
+       PROGRAM CARDS
+    ══════════════════════════════════════ */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
 
-    .card {
+    .prog-card {
       background: var(--white);
-      border-radius: 18px;
+      border: 1px solid var(--sand-dark);
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 2px 16px rgba(26,35,126,.07);
-      border: 1px solid #e4e7f5;
-      transition: transform .25s, box-shadow .25s;
+      box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
+      transition: transform 0.22s, box-shadow 0.22s;
+      position: relative;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 36px rgba(26,35,126,.13);
+    .prog-card.active:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
     }
+    .prog-card.soon { opacity: 0.72; }
 
-    .card-banner {
-      height: 8px;
-      background: linear-gradient(90deg, var(--navy), var(--mid));
+    .card-accent {
+      height: 4px;
+      background: var(--forest-lt);
     }
-    .card-banner.gold { background: linear-gradient(90deg, #b8860b, var(--gold)); }
+    .card-accent.gold { background: linear-gradient(90deg, #b8860b, #d4a017); }
+    .card-accent.green { background: linear-gradient(90deg, #1b5e20, #43a047); }
+    .card-accent.red   { background: linear-gradient(90deg, #bf360c, #ff7043); }
+    .card-accent.purple{ background: linear-gradient(90deg, #4a148c, #8e24aa); }
+    .card-accent.teal  { background: linear-gradient(90deg, #006064, #00acc1); }
+    .card-accent.indigo{ background: linear-gradient(90deg, #1a237e, #3949ab); }
 
-    .card-body { padding: 26px 28px 22px; flex: 1; }
+    .card-body { padding: 24px 26px 20px; flex: 1; }
 
-    .card-icon {
-      width: 52px; height: 52px;
-      background: var(--light);
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    .card-tag {
-      display: inline-block;
+    .card-num {
       font-size: 10.5px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--mid);
-      background: var(--light);
+      color: var(--ink-lt);
+      margin-bottom: 4px;
+    }
+    .card-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .card-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--forest-pal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .card-title {
+      font-family: 'Lora', serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.3;
+    }
+
+    .card-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ink-lt);
+      background: var(--sand);
+      border: 1px solid var(--sand-dark);
       border-radius: 99px;
       padding: 3px 12px;
       margin-bottom: 12px;
     }
 
-    .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.22rem;
-      color: var(--navy);
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
     .card-desc {
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--muted);
-      margin-bottom: 20px;
+      font-size: 13.5px;
+      line-height: 1.72;
+      color: var(--ink-mid);
+      margin-bottom: 18px;
     }
 
-    /* sub-program list */
-    .prog-list {
-      list-style: none;
+    .card-tags {
       display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 6px;
     }
-    .prog-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: var(--text);
-    }
-    .prog-list li .dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-    .prog-list li .prog-label { flex: 1; }
-    .prog-list li .badge {
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 9px;
+    .ctag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
       border-radius: 99px;
-      background: #e8f5e9;
-      color: #2e7d32;
-    }
-    .prog-list li .badge.soon {
-      background: #fff8e1;
-      color: #f57f17;
+      background: var(--forest-pal);
+      color: var(--forest-mid);
+      border: 1px solid rgba(82,183,136,0.3);
     }
 
-    .card-footer { padding: 0 28px 24px; }
+    .card-foot {
+      border-top: 1px solid var(--sand-dark);
+      padding: 14px 26px;
+    }
 
-    .btn-primary {
+    .btn-go {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, var(--navy), var(--mid));
+      background: var(--forest);
       color: var(--white);
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-size: 13.5px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 13px;
       font-weight: 600;
-      text-decoration: none;
-      transition: opacity .2s, transform .15s;
+      transition: background 0.18s, transform 0.15s;
     }
-    .btn-primary:hover { opacity: .88; transform: translateX(2px); }
-    .btn-primary svg { width: 16px; height: 16px; }
+    .btn-go:hover { background: var(--forest-mid); transform: translateX(2px); }
+    .btn-go svg { width: 15px; height: 15px; }
 
-    /* ── COMING SOON CARD ── */
-    .card.soon .card-body { opacity: .6; }
-    .card.soon .card-icon { background: #f5f5f5; }
-    .coming-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: #fff8e1; color: #e65100;
-      border-radius: 99px;
-      font-size: 11px; font-weight: 700;
-      padding: 5px 14px;
-      letter-spacing: .5px;
+    .soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 600;
+      background: var(--gold-lt);
+      color: #92610a;
+      border: 1px solid rgba(212,160,23,0.3);
     }
 
-    /* ── STATS BAR ── */
-    .stats-bar {
-      background: linear-gradient(135deg, var(--navy), var(--royal));
-      padding: 32px;
-      border-radius: 20px;
+    /* Hub link */
+    .hub-cta {
+      margin-top: 40px;
+      background: var(--forest);
+      border-radius: 16px;
+      padding: 28px 32px;
       display: flex;
-      gap: 0;
-      margin-bottom: 48px;
+      align-items: center;
+      gap: 24px;
+      color: var(--white);
       position: relative;
       overflow: hidden;
     }
-    .stats-bar::before {
+    .hub-cta::before {
       content: '';
       position: absolute;
       right: -40px; top: -40px;
-      width: 200px; height: 200px;
+      width: 180px; height: 180px;
       border-radius: 50%;
-      background: rgba(232,184,75,.1);
+      background: rgba(212,160,23,0.08);
     }
-    .stat-item {
-      flex: 1;
-      text-align: center;
-      color: var(--white);
+    .hub-cta .cta-icon { font-size: 36px; flex-shrink: 0; position: relative; }
+    .hub-cta .cta-text { flex: 1; position: relative; }
+    .hub-cta .cta-title {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--forest-lt);
+      margin-bottom: 6px;
+    }
+    .hub-cta p { font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.6; }
+    .btn-hub {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: opacity 0.18s;
       position: relative;
     }
-    .stat-item + .stat-item::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 50%;
-      transform: translateY(-50%);
-      width: 1px; height: 50%;
-      background: rgba(255,255,255,.2);
-    }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--gold);
-    }
-    .stat-label {
-      font-size: 12.5px;
-      color: rgba(255,255,255,.7);
-      margin-top: 4px;
-    }
+    .btn-hub:hover { opacity: 0.88; }
 
-    /* ── FOOTER ── */
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
     footer {
-      background: var(--navy);
-      color: rgba(255,255,255,.6);
+      background: var(--forest);
+      color: rgba(255,255,255,0.55);
       text-align: center;
       padding: 28px 32px;
       font-size: 13px;
     }
-    footer strong { color: var(--gold); }
-    footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+    footer strong { color: var(--forest-lt); }
+    footer a { color: rgba(255,255,255,0.5); }
+    footer a:hover { color: var(--forest-lt); }
 
-    @media (max-width: 640px) {
-      .header-inner { padding: 28px 20px; gap: 18px; }
-      .logo-wrap { width: 68px; height: 68px; }
-      .school-name { font-size: 1.25rem; }
-      .hero, .section-wrap { padding-left: 20px; padding-right: 20px; }
-      .stats-bar { flex-direction: column; gap: 20px; }
-      .stat-item + .stat-item::before { display: none; }
-      .nav-inner { overflow-x: auto; padding: 0 16px; }
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 760px) {
+      .topbar { padding: 6px 16px; font-size: 11px; }
+      .hero { padding: 44px 20px 78px; }
+      .page { padding: 36px 18px 60px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hub-cta { flex-direction: column; gap: 16px; }
+      .btn-hub { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat-num { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
-<header>
-  <div class="header-inner">
-    <div class="logo-wrap">
-      <img src="logo_sekolah_tanpa_background.png" alt="Logo SD Muhammadiyah 01 Kukusan"/>
-    </div>
-    <div class="header-text">
-      <div class="school-label">Portal Resmi</div>
-      <div class="school-name">SD Muhammadiyah 01 Kukusan</div>
-      <div class="school-sub">Jl. Kukusan Raya · Depok, Jawa Barat &nbsp;|&nbsp; sdm01kks.github.io</div>
-    </div>
+<!-- ══ TOPBAR ══ -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Jl. Kukusan Raya, Depok, Jawa Barat</span>
+    <span class="topbar-sep">|</span>
+    <span>Portal Kebijakan &amp; Program Pemerintah</span>
   </div>
-  <nav class="nav-strip">
-    <div class="nav-inner">
-      <a href="index.html" class="active">Beranda</a>
-      <a href="program-pemerintah/index.html">Program Pemerintah</a>
-    </div>
-  </nav>
-</header>
+  <div>
+    <a href="https://sdm01kks.github.io" target="_blank" rel="noopener">sdm01kks.github.io</a>
+    <span class="topbar-sep"> &nbsp;|&nbsp; </span>
+    <span>© 2026</span>
+  </div>
+</div>
 
 <!-- ══ HERO ══ -->
-<section class="hero">
-  <div class="hero-eyebrow"><span></span>Portal Kebijakan &amp; Program Pendidikan</div>
-  <h1>Menjembatani <em>Kebijakan Nasional</em><br/>dengan Praktik Nyata di Sekolah</h1>
-  <p>
-    Portal ini menyajikan informasi kebijakan dan program pendidikan terkini dari pemerintah
-    secara ringkas, kontekstual, dan mudah dipahami — untuk mendukung guru, kepala sekolah,
-    dan orang tua dalam mengimplementasikan pendidikan bermutu di SD Muhammadiyah 01 Kukusan.
-  </p>
-</section>
+<div class="hero">
+  <div class="hero-deco d1"></div>
+  <div class="hero-deco d2"></div>
+  <div class="hero-deco d3"></div>
+  <div class="hero-deco d4"></div>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="logo-circle">
+        <img src="logo_sekolah_background_putih.jpeg" alt="Logo SD Muhammadiyah 01 Kukusan"/>
+      </div>
+      <div>
+        <div class="hero-school-name">SD Muhammadiyah 01 Kukusan</div>
+        <div class="hero-school-sub">Depok, Jawa Barat &nbsp;·&nbsp; Amanah · Profesional · Berkemajuan</div>
+      </div>
+    </div>
+    <div class="hero-eyebrow"><span class="dot"></span>Portal Kebijakan &amp; Program Pendidikan</div>
+    <h1 class="hero-title">
+      Menjembatani <em>Kebijakan Nasional</em><br/>dengan Praktik Nyata di Sekolah
+    </h1>
+    <p class="hero-sub">
+      Portal ini menyajikan kebijakan dan program pendidikan dari pemerintah secara ringkas dan kontekstual —
+      untuk mendukung guru, kepala sekolah, dan orang tua dalam mengimplementasikan pendidikan bermutu.
+    </p>
+  </div>
+</div>
 
-<!-- ══ STATS ══ -->
-<div class="section-wrap">
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num">6</div>
+<!-- ══ STICKY NAV ══ -->
+<nav class="main-nav">
+  <div class="main-nav-inner">
+    <div class="nav-brand">SDM01 Kukusan</div>
+    <a href="index.html" class="active">🏠 Beranda</a>
+    <a href="program-pemerintah/index.html">📋 Program Pemerintah</a>
+  </div>
+</nav>
+
+<!-- ══ CONTENT ══ -->
+<div class="page">
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-num">7</div>
       <div class="stat-label">Program Pemerintah</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">2</div>
-      <div class="stat-label">Dokumen Tersedia</div>
+    <div class="stat-card">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Halaman Tersedia</div>
     </div>
-    <div class="stat-item">
+    <div class="stat-card">
       <div class="stat-num">2026</div>
       <div class="stat-label">Tahun Kebijakan</div>
     </div>
-    <div class="stat-item">
+    <div class="stat-card">
       <div class="stat-num">118</div>
-      <div class="stat-label">Halaman Dikaji (GNN)</div>
+      <div class="stat-label">Hal. Dikaji (GNN)</div>
     </div>
   </div>
 
-  <!-- ══ CARDS ══ -->
-  <div class="section-title">Kebijakan &amp; Program Pemerintah</div>
+  <!-- Section header -->
+  <div class="section-eyebrow">Kebijakan &amp; Program Pendidikan Nasional</div>
+  <h2 class="section-title">Program Pemerintah yang Dikaji</h2>
   <p class="section-desc">
-    Kumpulan dokumen kebijakan pendidikan yang dikaji dan dikontekstualisasikan untuk lingkungan SD Muhammadiyah 01 Kukusan.
+    Kumpulan dokumen kebijakan pendidikan yang telah dianalisis dan dikontekstualisasikan
+    untuk implementasi di SD Muhammadiyah 01 Kukusan.
   </p>
 
+  <!-- ══ CARDS ══ -->
   <div class="card-grid">
 
-    <!-- Card 1 — GNN (Active) -->
-    <div class="card">
-      <div class="card-banner"></div>
+    <!-- 1. GNN -->
+    <div class="prog-card active">
+      <div class="card-accent indigo"></div>
       <div class="card-body">
-        <div class="card-icon">🔢</div>
-        <div class="card-tag">Kemendikdasmen · Januari 2026</div>
-        <div class="card-title">Gerakan Numerasi Nasional (GNN)</div>
-        <div class="card-desc">
-          Strategi nasional untuk meningkatkan kemampuan numerasi murid dan masyarakat Indonesia melalui sinergi sekolah, keluarga, masyarakat, dan media dalam ekosistem pendidikan.
+        <div class="card-num">Program 01</div>
+        <div class="card-icon-row">
+          <div class="card-icon" style="background:#e8eaf6;">🔢</div>
+          <div class="card-title">Gerakan Numerasi Nasional (GNN)</div>
         </div>
-        <ul class="prog-list">
-          <li><div class="dot"></div><span class="prog-label">Konsep &amp; Landasan GNN</span><span class="badge">✓ Ada</span></li>
-          <li><div class="dot"></div><span class="prog-label">Prinsip &amp; Strategi Implementasi</span><span class="badge">✓ Ada</span></li>
-          <li><div class="dot"></div><span class="prog-label">Peran Pemangku Kepentingan</span><span class="badge">✓ Ada</span></li>
-          <li><div class="dot"></div><span class="prog-label">Aplikasi di SD Muh. 01 Kukusan</span><span class="badge">✓ Ada</span></li>
-        </ul>
+        <div class="card-source">📄 Naskah Akademik · BSKAP · Jan 2026</div>
+        <p class="card-desc">
+          Strategi nasional untuk meningkatkan kemampuan numerasi murid dan masyarakat melalui sinergi sekolah, keluarga, masyarakat, dan media. Numerasi dipandang sebagai kecakapan hidup, bukan sekadar kemampuan berhitung.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Numerasi</span>
+          <span class="ctag">Matematika</span>
+          <span class="ctag">118 hal.</span>
+        </div>
       </div>
-      <div class="card-footer">
-        <a href="program-pemerintah/gerakan-numerasi-nasional.html" class="btn-primary">
+      <div class="card-foot">
+        <a href="program-pemerintah/gerakan-numerasi-nasional.html" class="btn-go">
           Baca Selengkapnya
           <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
         </a>
       </div>
     </div>
 
-    <!-- Card 2 — Standar Proses — ACTIVE -->
-    <div class="card">
-      <div class="card-banner gold"></div>
+    <!-- 2. Standar Proses -->
+    <div class="prog-card active">
+      <div class="card-accent gold"></div>
       <div class="card-body">
-        <div class="card-icon">📋</div>
-        <div class="card-tag">Permendikdasmen No.1 · Januari 2026</div>
-        <div class="card-title">Standar Proses Pendidikan 2026</div>
-        <div class="card-desc">
+        <div class="card-num">Program 02</div>
+        <div class="card-icon-row">
+          <div class="card-icon" style="background:#fff8e1;">📋</div>
+          <div class="card-title">Standar Proses Pendidikan 2026</div>
+        </div>
+        <div class="card-source">📄 Permendikdasmen No.1 · 5 Jan 2026</div>
+        <p class="card-desc">
           Regulasi terbaru pengganti Permendikbud No.16/2022 — menetapkan kriteria minimal proses pembelajaran dengan prinsip berkesadaran, bermakna, dan menggembirakan di seluruh jenjang.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Standar Proses</span>
+          <span class="ctag">Permendikdasmen</span>
+          <span class="ctag">9 hal.</span>
         </div>
-        <ul class="prog-list">
-          <li><div class="dot"></div><span class="prog-label">Prinsip &amp; Kerangka Pembelajaran</span><span class="badge">✓ Ada</span></li>
-          <li><div class="dot"></div><span class="prog-label">Perencanaan &amp; Pelaksanaan</span><span class="badge">✓ Ada</span></li>
-          <li><div class="dot"></div><span class="prog-label">Sistem Penilaian Proses</span><span class="badge">✓ Ada</span></li>
-          <li><div class="dot"></div><span class="prog-label">Aplikasi di SD Muh. 01 Kukusan</span><span class="badge">✓ Ada</span></li>
-        </ul>
       </div>
-      <div class="card-footer">
-        <a href="program-pemerintah/standar-proses.html" class="btn-primary">
+      <div class="card-foot">
+        <a href="program-pemerintah/standar-proses.html" class="btn-go">
           Baca Selengkapnya
           <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
         </a>
       </div>
     </div>
 
-    <!-- Card 3 — Menulis -->
-    <div class="card soon">
-      <div class="card-banner gold"></div>
+    <!-- 3. Menulis — DIPERBAIKI: sekarang aktif -->
+    <div class="prog-card active">
+      <div class="card-accent green"></div>
       <div class="card-body">
-        <div class="card-icon">✍️</div>
-        <div class="card-tag">Kemendikdasmen · 2025</div>
-        <div class="card-title">Juknis Keterampilan Menulis</div>
-        <div class="card-desc">
-          Petunjuk teknis pelaksanaan program penguatan keterampilan menulis bagi murid sekolah dasar sebagai bagian dari penguatan literasi nasional.
+        <div class="card-num">Program 03</div>
+        <div class="card-icon-row">
+          <div class="card-icon" style="background:#e8f5e9;">✍️</div>
+          <div class="card-title">Juknis Keterampilan Menulis</div>
+        </div>
+        <div class="card-source">📄 Petunjuk Teknis · Kemendikdasmen · 2025</div>
+        <p class="card-desc">
+          Petunjuk teknis pelaksanaan program penguatan keterampilan menulis bagi murid sekolah dasar sebagai bagian dari penguatan literasi nasional yang holistik dan menyenangkan.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Literasi</span>
+          <span class="ctag">Menulis</span>
+          <span class="ctag">SD</span>
         </div>
       </div>
-      <div class="card-footer">
-        <span class="coming-badge">🕐 Segera Hadir</span>
+      <div class="card-foot">
+        <a href="program-pemerintah/juknis-keterampilan-menulis.html" class="btn-go">
+          Baca Selengkapnya
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- Card 4 — Bencana -->
-    <div class="card soon">
-      <div class="card-banner gold"></div>
+    <!-- 4. Kebencanaan — DIPERBAIKI: sekarang aktif -->
+    <div class="prog-card active">
+      <div class="card-accent red"></div>
       <div class="card-body">
-        <div class="card-icon">🛡️</div>
-        <div class="card-tag">Kemendikdasmen · 2025</div>
-        <div class="card-title">Pendidikan Kebencanaan</div>
-        <div class="card-desc">
-          Panduan integrasi pendidikan pengurangan risiko bencana ke dalam kurikulum sekolah dasar untuk membangun kesiapsiagaan murid sejak dini.
+        <div class="card-num">Program 04</div>
+        <div class="card-icon-row">
+          <div class="card-icon" style="background:#fbe9e7;">🛡️</div>
+          <div class="card-title">Pendidikan Kebencanaan</div>
+        </div>
+        <div class="card-source">📄 Kemendikdasmen · BNPB · 2025</div>
+        <p class="card-desc">
+          Panduan integrasi pendidikan pengurangan risiko bencana ke dalam kurikulum sekolah dasar untuk membangun kesiapsiagaan dan ketangguhan murid sejak dini.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Kebencanaan</span>
+          <span class="ctag">Mitigasi</span>
+          <span class="ctag">Karakter</span>
         </div>
       </div>
-      <div class="card-footer">
-        <span class="coming-badge">🕐 Segera Hadir</span>
+      <div class="card-foot">
+        <a href="program-pemerintah/pendidikan-kebencanaan.html" class="btn-go">
+          Baca Selengkapnya
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- Card 5 — Antikorupsi -->
-    <div class="card soon">
-      <div class="card-banner gold"></div>
+    <!-- 5. Antikorupsi — DIPERBAIKI: sekarang aktif -->
+    <div class="prog-card active">
+      <div class="card-accent purple"></div>
       <div class="card-body">
-        <div class="card-icon">⚖️</div>
-        <div class="card-tag">KPK · Kemendikdasmen · 2025</div>
-        <div class="card-title">Pendidikan Antikorupsi</div>
-        <div class="card-desc">
-          Program penanaman nilai-nilai integritas, kejujuran, dan antikorupsi sejak jenjang sekolah dasar melalui pendekatan pembelajaran yang kontekstual.
+        <div class="card-num">Program 05</div>
+        <div class="card-icon-row">
+          <div class="card-icon" style="background:#f3e5f5;">⚖️</div>
+          <div class="card-title">Pendidikan Antikorupsi</div>
+        </div>
+        <div class="card-source">📄 KPK · BSKAP Kemendikdasmen · 2025</div>
+        <p class="card-desc">
+          Program penanaman nilai integritas, kejujuran, dan antikorupsi sejak sekolah dasar melalui pendekatan pembelajaran yang kontekstual, kreatif, dan terintegrasi dalam mata pelajaran.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Antikorupsi</span>
+          <span class="ctag">Integritas</span>
+          <span class="ctag">Karakter</span>
         </div>
       </div>
-      <div class="card-footer">
-        <span class="coming-badge">🕐 Segera Hadir</span>
+      <div class="card-foot">
+        <a href="program-pemerintah/pendidikan-antikorupsi.html" class="btn-go">
+          Baca Selengkapnya
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- Card 6 — Narkoba -->
-    <div class="card soon">
-      <div class="card-banner gold"></div>
+    <!-- 6. Anti Narkoba — masih Segera Hadir -->
+    <div class="prog-card soon">
+      <div class="card-accent teal"></div>
       <div class="card-body">
-        <div class="card-icon">🚫</div>
-        <div class="card-tag">BNN · Kemendikdasmen · 2025</div>
-        <div class="card-title">Integrasi Kurikulum Anti Narkoba</div>
-        <div class="card-desc">
-          Panduan mengintegrasikan materi pencegahan penyalahgunaan narkoba ke dalam mata pelajaran yang relevan di sekolah dasar secara holistik.
+        <div class="card-num">Program 06</div>
+        <div class="card-icon-row">
+          <div class="card-icon" style="background:#e0f7fa;">🚫</div>
+          <div class="card-title">Integrasi Kurikulum Anti Narkoba</div>
+        </div>
+        <div class="card-source">📄 BNN · Kemendikdasmen · 2025</div>
+        <p class="card-desc">
+          Panduan mengintegrasikan materi pencegahan penyalahgunaan narkoba ke dalam mata pelajaran relevan di sekolah dasar secara holistik, kontekstual, dan sesuai usia murid.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Anti Narkoba</span>
+          <span class="ctag">Pencegahan</span>
+          <span class="ctag">Karakter</span>
         </div>
       </div>
-      <div class="card-footer">
-        <span class="coming-badge">🕐 Segera Hadir</span>
+      <div class="card-foot">
+        <span class="soon-badge">🕐 Segera Hadir</span>
+      </div>
+    </div>
+
+    <!-- 7. Sekolah Model — BARU -->
+    <div class="prog-card soon">
+      <div class="card-accent" style="background:linear-gradient(90deg,#0d47a1,#1976d2);"></div>
+      <div class="card-body">
+        <div class="card-num">Program 07</div>
+        <div class="card-icon-row">
+          <div class="card-icon" style="background:#e3f2fd;">🤖</div>
+          <div class="card-title">Sekolah Model: Pembelajaran Mendalam &amp; Koding–KA</div>
+        </div>
+        <div class="card-source">📄 Kemendikdasmen · 2025–2026</div>
+        <p class="card-desc">
+          Penyelenggaraan Sekolah Model Implementasi Pembelajaran Mendalam dan Koding dan Kecerdasan Artifisial — panduan bagi sekolah yang ditetapkan sebagai model penerapan pembelajaran mendalam berbasis teknologi.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Koding</span>
+          <span class="ctag">Kecerdasan Artifisial</span>
+          <span class="ctag">Sekolah Model</span>
+        </div>
+      </div>
+      <div class="card-foot">
+        <span class="soon-badge">🕐 Segera Hadir</span>
       </div>
     </div>
 
   </div><!-- /card-grid -->
-</div><!-- /section-wrap -->
+
+  <!-- CTA ke Hub -->
+  <div class="hub-cta">
+    <div class="cta-icon">📌</div>
+    <div class="cta-text">
+      <div class="cta-title">Lihat Semua Program &amp; Status Dokumentasi</div>
+      <p>Halaman hub menampilkan seluruh program beserta progress dokumentasi, penjelasan ringkas, dan tautan langsung ke setiap kajian.</p>
+    </div>
+    <a href="program-pemerintah/index.html" class="btn-hub">
+      Buka Hub Program →
+    </a>
+  </div>
+
+</div><!-- /page -->
 
 <!-- ══ FOOTER ══ -->
 <footer>
   <p>
     &copy; 2026 <strong>SD Muhammadiyah 01 Kukusan</strong> · Depok, Jawa Barat
-    &nbsp;|&nbsp; <a href="https://sdm01kks.github.io">sdm01kks.github.io</a>
+    &nbsp;|&nbsp; <a href="https://sdm01kks.github.io" target="_blank">sdm01kks.github.io</a>
   </p>
-  <p style="margin-top:6px; font-size:12px;">
-    Dikembangkan untuk mendukung implementasi kebijakan pendidikan bermutu · Amanah · Profesional · Berkemajuan
+  <p style="margin-top:5px; font-size:11.5px;">
+    Portal Kebijakan &amp; Program Pendidikan &nbsp;·&nbsp; Amanah · Profesional · Berkemajuan
   </p>
 </footer>
 
